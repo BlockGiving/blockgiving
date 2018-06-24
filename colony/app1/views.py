@@ -17,7 +17,11 @@ class ProjectDetailsView(APIView):
 
     def get(self, request):
 
-        return render(request, 'html/projectdetails.html')
+        domainId = request.GET['domainId']
+
+        project = CreateProject.objects.get(domainId=domainId)
+
+        return render(request, 'html/projectdetails.html', {'domainId' : domainId})
 
 
 class ProjectFunds(APIView):
