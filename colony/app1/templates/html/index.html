@@ -1,0 +1,411 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Colony hack</title> <!-- Bootstrap -->
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+
+<body>
+	<header class="site-header">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="row">
+					<div class="col-sm-3 navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						 aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">
+							<img src="{% static 'images/logo.png' %}" alt="logo">
+						</a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="col-sm-9 headr-nav">
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="site-nav nav navbar-nav">
+								<li>
+									<a href="#">Members </a>
+								</li>
+								<li>
+									<a href="#">Funds</a>
+								</li>
+
+							</ul>
+
+							<ul class="site-navright nav navbar-nav navbar-right">
+								<li>
+									<form class="serchbar navbar-form navbar-left">
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Search">
+										</div>
+										<button type="submit" class="btn btn-default">
+											<i class="fa fa-search"></i>
+										</button>
+									</form>
+								</li>
+								<li class="user-img">
+									<img src="{% static 'images/user.png' %}" alt="user">
+								</li>
+
+								<!--  <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Join us <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Action</a></li>
+	            <li><a href="#">Another action</a></li>
+	            <li><a href="#">Something else here</a></li>
+	          </ul>
+	      </li>-->
+							</ul>
+						</div>
+						<!-- /.navbar-collapse -->
+					</div>
+				</div>
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+	</header>
+	<section class="site-content">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 leftside-content">
+					<div class="leftside-content-inner">
+						<h3 class="section-title">Connected to
+							<br/>Ethereum Testnet</h3>
+						<p class="section-summry">A self-perpetuating,
+							<br/> decentralized, cross-borders,
+							<br/> Giving Platform</p>
+					</div>
+				</div>
+				<div class="col-sm-6 rightside-content">
+					<div class="rightside-content-inner">
+						<div class="sectionheadings">
+							<div class="row">
+								<h3 class="col-sm-8 section-heding">Ongoing Projects</h3>
+								<h4 class="col-sm-4 creatprjct">
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createProjectModal">
+										<i class="fa fa-plus" aria-hidden="true"></i> Create a project</button>
+								</h4>
+							</div>
+
+							<!-- Modal -->
+							<div class="modal fade" id="createProjectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<div class="row">
+												<div class="col-xs-11">
+													<h5 class="modal-title" id="exampleModalLabel">Create a new project </h5>
+												</div>
+												<div class="col-xs-1">
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+											</div>
+										</div>
+										<div class="modal-body">
+											<form class="form-horizontal">
+												<div class="form-group">
+													<div class="col-xs-4">
+														<label for="projectName" class="control-label">Project Title</label>
+													</div>
+													<div class="col-xs-8">
+														<input type="text" class="form-control" id="projectName" placeholder="Enter a name for the project">
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-xs-4">
+														<label for="projectDescription" class="control-label">Project Breif</label>
+													</div>
+													<div class="col-xs-8 projectDes">
+														<input type="text" class="form-control" id="projectDescription" placeholder="Describe what needs to be done in few lines">
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-xs-4">
+														<label for="projectFunds" class="control-label">Project Funds</label>
+													</div>
+													<div class="col-xs-4">
+														<input type="text" class="form-control" id="projectFunds">
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-xs-4">
+														<label for="projectEvalutors" class="control-label">Project Evalutors</label>
+													</div>
+													<div class="col-xs-8">
+														<input type="text" class="form-control" id="projectEvalutors" placeholder="Type or paste ETH address">
+														<span>*ETH addrss of the person who should evalute the action after its done</span>
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-xs-4">
+														<label for="yourName" class="control-label">Your name</label>
+													</div>
+													<div class="col-xs-8">
+														<input type="text" class="form-control" id="yourName" placeholder="Type or paste ETH address">
+														<span>ETH address
+															<span class="main-addtress">0x93E68229430e92873H83L98K12A</span>
+														</span>
+													</div>
+												</div>
+											</form>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-primary">Start Project</button>
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="ongoing-projectlinks">
+							<div class="project-links">
+								<div class="tabbable">
+									<ul class="nav nav-tabs">
+										<li class="active">
+											<a href="#allprojects" data-toggle="tab" aria-expanded="false">All Projects</a>
+										</li>
+										<li class="">
+											<a href="#zerohunger" data-toggle="tab" aria-expanded="false">Zero Hunger</a>
+										</li>
+										<li class="">
+											<a href="#education" data-toggle="tab" aria-expanded="true">Education</a>
+										</li>
+										<li class="">
+											<a href="#cleanwater" data-toggle="tab" aria-expanded="true">Clean Water</a>
+										</li>
+									</ul>
+									<div class="tab-content">
+										<div class="tab-pane active" id="allprojects">
+											<div class="allprojects-main">
+												<div class="row">
+													<div class="col-sm-2 proj-img-main">
+														<figure>
+															<img src="images/logo.png" alt="img" style="padding-top: 25px;">
+														</figure>
+													</div>
+													<div class="col-sm-8 proj-detail">
+														<h3 class="title">Grow ProjectX</h3>
+														<p class="subtitle">Contribute to grow the platform</p>
+														<h4 class="proj-tags-main">
+
+															<img src="images/task.png" alt="img">
+															<span class="tag-text">Actions Completed </span>
+
+															<img src="images/funds.png" alt="img">
+															<span class="tag-text">Actions Completed
+																<strong>10 ETH</strong>
+															</span>
+														</h4>
+													</div>
+													<div class="col-sm-2 Contributelink-main">
+														<a href="#"> Contribute</a>
+													</div>
+												</div>
+											</div>
+											<div class="allprojects-main">
+												<div class="row">
+													<div class="col-sm-2 proj-img-main">
+														<figure>
+															<img src="images/logo.png" alt="img" style="padding-top: 25px;">
+														</figure>
+													</div>
+													<div class="col-sm-8 proj-detail">
+														<h3 class="title">Grow ProjectX</h3>
+														<p class="subtitle">Contribute to grow the platform</p>
+														<h4 class="proj-tags-main">
+
+															<img src="images/task.png" alt="img">
+															<span class="tag-text">Actions Completed </span>
+
+															<img src="images/funds.png" alt="img">
+															<span class="tag-text">Actions Completed
+																<strong>10 ETH</strong>
+															</span>
+														</h4>
+													</div>
+													<div class="col-sm-2 Contributelink-main">
+														<a href="#"> Contribute</a>
+													</div>
+												</div>
+											</div>
+											<div class="allprojects-main">
+												<div class="row">
+													<div class="col-sm-2 proj-img-main">
+														<figure>
+															<img src="images/logo.png" alt="img" style="padding-top: 25px;">
+														</figure>
+													</div>
+													<div class="col-sm-8 proj-detail">
+														<h3 class="title">Grow ProjectX</h3>
+														<p class="subtitle">Contribute to grow the platform</p>
+														<h4 class="proj-tags-main">
+
+															<img src="images/task.png" alt="img">
+															<span class="tag-text">Actions Completed </span>
+
+															<img src="images/funds.png" alt="img">
+															<span class="tag-text">Actions Completed
+																<strong>10 ETH</strong>
+															</span>
+
+														</h4>
+													</div>
+													<div class="col-sm-2 Contributelink-main">
+														<a href="#"> Contribute</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane" id="zerohunger">Secondo sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. Aliquam in felis sit amet
+											augue.</div>
+										<div class="tab-pane " id="education">Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque
+											mauris augue, molestie tincidunt condimentum vitae.</div>
+										<div class="tab-pane " id="cleanwater">consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt
+											condimentum vitae.</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="{% static 'js/custom/jquey.js' %}"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="{% static js/bootstrap.min.js %}"></script>
+
+	<script>
+
+		$(document).ready(function () {
+
+			//contains logic for colony smart contracts
+
+			var colonyContract = web3.eth.contract([{ "constant": false, "inputs": [{ "name": "_parentSkillId", "type": "uint256" }], "name": "addDomain", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_parentSkillId", "type": "uint256" }], "name": "addGlobalSkill", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "assignWorkRating", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_users", "type": "address[]" }, { "name": "_amount", "type": "int256[]" }], "name": "bootstrapColony", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "cancelTask", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_token", "type": "address" }], "name": "claimColonyFunds", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint256" }, { "name": "_token", "type": "address" }], "name": "claimPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_payoutId", "type": "uint256" }, { "name": "_squareRoots", "type": "uint256[7]" }, { "name": "_userReputation", "type": "uint256" }, { "name": "_totalReputation", "type": "uint256" }], "name": "claimRewardPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_sigV", "type": "uint8[]" }, { "name": "_sigR", "type": "bytes32[]" }, { "name": "_sigS", "type": "bytes32[]" }, { "name": "_mode", "type": "uint8[]" }, { "name": "_value", "type": "uint256" }, { "name": "_data", "type": "bytes" }], "name": "executeTaskChange", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_payoutId", "type": "uint256" }], "name": "finalizeRewardPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "finalizeTask", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "getGlobalRewardPayoutCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_user", "type": "address" }], "name": "getUserRewardPayoutCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_network", "type": "address" }], "name": "initialiseColony", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_specificationHash", "type": "bytes32" }, { "name": "_domainId", "type": "uint256" }], "name": "makeTask", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_wad", "type": "uint256" }], "name": "mintTokens", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_wad", "type": "uint256" }], "name": "mintTokensForColonyNetwork", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_fromPot", "type": "uint256" }, { "name": "_toPot", "type": "uint256" }, { "name": "_amount", "type": "uint256" }, { "name": "_token", "type": "address" }], "name": "moveFundsBetweenPots", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint8" }, { "name": "_rating", "type": "uint8" }, { "name": "_salt", "type": "bytes32" }], "name": "revealTaskWorkRating", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_specificationHash", "type": "bytes32" }], "name": "setTaskBrief", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_domainId", "type": "uint256" }], "name": "setTaskDomain", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_dueDate", "type": "uint256" }], "name": "setTaskDueDate", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_token", "type": "address" }, { "name": "_amount", "type": "uint256" }], "name": "setTaskEvaluatorPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_token", "type": "address" }, { "name": "_amount", "type": "uint256" }], "name": "setTaskManagerPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint8" }, { "name": "_user", "type": "address" }], "name": "setTaskRoleUser", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_skillId", "type": "uint256" }], "name": "setTaskSkill", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_token", "type": "address" }, { "name": "_amount", "type": "uint256" }], "name": "setTaskWorkerPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_token", "type": "address" }], "name": "setToken", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_token", "type": "address" }], "name": "startNextRewardPayout", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_deliverableHash", "type": "bytes32" }], "name": "submitTaskDeliverable", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint8" }, { "name": "_ratingSecret", "type": "bytes32" }], "name": "submitTaskWorkRating", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }], "name": "TaskAdded", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "specificationHash", "type": "bytes32" }], "name": "TaskBriefChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "dueDate", "type": "uint256" }], "name": "TaskDueDateChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "domainId", "type": "uint256" }], "name": "TaskDomainChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "skillId", "type": "uint256" }], "name": "TaskSkillChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "role", "type": "uint8" }, { "indexed": false, "name": "user", "type": "address" }], "name": "TaskRoleUserChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "token", "type": "address" }, { "indexed": false, "name": "amount", "type": "uint256" }], "name": "TaskWorkerPayoutChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }], "name": "TaskFinalized", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }], "name": "TaskCanceled", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }], "name": "RewardPayoutCycleStarted", "type": "event" }, { "constant": false, "inputs": [{ "name": "_numPayouts", "type": "uint256" }], "name": "waiveRewardPayouts", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "authority", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_salt", "type": "bytes32" }, { "name": "_value", "type": "uint256" }], "name": "generateSecret", "outputs": [{ "name": "", "type": "bytes32" }], "payable": false, "stateMutability": "pure", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "getDomain", "outputs": [{ "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getDomainCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getFeeInverse", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "pure", "type": "function" }, { "constant": true, "inputs": [{ "name": "_token", "type": "address" }], "name": "getNonRewardPotsTotal", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_potId", "type": "uint256" }, { "name": "_token", "type": "address" }], "name": "getPotBalance", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getRewardInverse", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "pure", "type": "function" }, { "constant": true, "inputs": [{ "name": "_payoutId", "type": "uint256" }], "name": "getRewardPayoutInfo", "outputs": [{ "name": "", "type": "bytes32" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "address" }, { "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "getTask", "outputs": [{ "name": "", "type": "bytes32" }, { "name": "", "type": "bytes32" }, { "name": "", "type": "bool" }, { "name": "", "type": "bool" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256[]" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "getTaskChangeNonce", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getTaskCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint256" }, { "name": "_token", "type": "address" }], "name": "getTaskPayout", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint8" }], "name": "getTaskRole", "outputs": [{ "name": "", "type": "address" }, { "name": "", "type": "bool" }, { "name": "", "type": "uint8" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "getTaskWorkRatings", "outputs": [{ "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint8" }], "name": "getTaskWorkRatingSecret", "outputs": [{ "name": "", "type": "bytes32" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getToken", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "owner", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "key", "type": "bytes" }, { "name": "value", "type": "bytes" }, { "name": "branchMask", "type": "uint256" }, { "name": "siblings", "type": "bytes32[]" }], "name": "verifyReputationProof", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "version", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "pure", "type": "function" }]);
+			var colonyContractAddress = '0x9B5B236d0a8b344c5908b28F5d68f46E332cb624';
+
+			var colonyTokenAddress = '0x4d2D8454b3591C158f5C70eeA5660e596baAb6cD';
+
+			//imported to get owner of this colony
+			var dsauthContract = web3.eth.contract([{ "constant": false, "inputs": [{ "name": "owner_", "type": "address" }], "name": "setOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "authority_", "type": "address" }], "name": "setAuthority", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "owner", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "authority", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "authority", "type": "address" }], "name": "LogSetAuthority", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "owner", "type": "address" }], "name": "LogSetOwner", "type": "event" }]);
+
+			//using ipfs api to send task in ipfs
+			var ipfs = window.IpfsApi({
+				host: 'https://ipfs.infura.io/',
+				port: 5001
+			});
+
+			//hardcoding JSON here, both DomainId and DomainName.
+			//using remix to create domains and to transfer fund to all pots.
+			var domainAndNameMapping = [
+				{
+					'domainName': 'Grow Project X',
+					'domainId': '1'
+				},
+				{
+					'domainName': 'Zero Hunger',
+					'domainId': '2'
+				},
+				{
+					'domainName': 'Education',
+					'domainId': '3'
+				},
+				{
+					'domainName': 'Clean Water',
+					'domainId': '4'
+				}
+			];
+
+			//function to get tokenAddress
+			colonyContract.at(colonyContractAddress).getToken.call(function (err, data) {
+				if (err) { console.error(err) }
+				else {
+					console.log(data);
+				}
+			})
+
+			//function to get owner address, if ownerAddress == metamask user then show option to create a new project
+			colonyContract.at(colonyContractAddress).owner.call(function (err, data) {
+				if (err) { console.error(error) }
+				else {
+					console.log('metamask owner address: ', web3.eth.accounts[0]);
+					colonyContract.at(colonyContractAddress).authority.call(function (err, data) {
+						if (err) {
+							console.error(err)
+						} else {
+							console.log('authority smart contract address: ', data);
+
+							//getting owner of authority smart contract address
+							dsauthContract.at(data).owner.call(function (err, data) {
+								if (err) { console.error(err) }
+								else {
+									console.log('owner address, check metamask address too, ', data)
+									//call if condition and DOM insert functions here
+									if (data == web3.eth.accounts[0]) {
+										console.log('owner address, append dom for owner to add domains');
+									}
+								}
+							})
+						}
+					})
+				}
+			})
+
+			//getting pot balance for every project
+			//pot balance is transferred using remix
+			//if needed, add domain creation and pot transfer option inside admin template
+			domainAndNameMapping.forEach(function (domain) {
+
+				console.log(domain.domainId);
+
+				colonyContract.at(colonyContractAddress).getPotBalance(domain.domainId, colonyTokenAddress, function (err, data) {
+					if (err) { console.error(err) }
+					else {
+						console.log(domain.domainName, web3.fromWei(data).toString());
+
+						//appending data to main DOM
+						$('#domainAndFund').append(
+							'<p>' +
+							'Project Name: ' + domain.domainName + '<br />' +
+							'Available Fund: ' + web3.fromWei(data).toString() + '<br/>' +
+							'</p>'
+						)
+					}
+				})
+			})
+		});
+
+	</script>
+
+</body>
+
+</html>

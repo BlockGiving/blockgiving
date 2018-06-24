@@ -1,0 +1,558 @@
+
+/*.site-header .navbar-header {
+  float: none;
+}
+.site-header .navbar-toggle {
+  display: block;
+}
+.site-header .navbar-collapse.collapse {
+  display: none!important;
+}
+.site-header .navbar-nav {
+  float: none!important;
+}
+.site-header .navbar-nav>li {
+  float: none;
+}
+.site-header .navbar-collapse.collapse.in{
+  display:block !important;
+}
+.site-header .navbar-inverse .navbar-brand {
+    color: #fff;
+}
+.site-header .site-nav {
+    float: left;
+}
+.site-header .navbar-inverse {
+    background-color: #13ace6;
+    border-color: #13ace6;
+}*/
+body
+{
+font-family: 'Open Sans', sans-serif;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6
+{
+font-family: 'Open Sans', sans-serif;
+}
+.site-header .navbar-default {
+    background-color: transparent;
+   
+}
+.serchbar .btn {
+    position: absolute;
+    top: 8px;
+    border-right: none;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0;
+    padding-right: 0px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.serchbar .btn-default:hover {
+    color: #333;
+    background-color: transparent;
+    border-color: transparent;
+}
+.serchbar .form-control {
+    box-shadow: inherit;
+    padding-left: 30px;
+	    border-radius: 20px;
+}
+.section-title
+{
+font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4c5264;
+}
+.section-summry
+{
+ font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: left;
+  color: #8a9299;
+}
+.section-heding {
+  
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4c5264;
+}
+.serchbar .form-control:focus {
+    border-color: #ccc;
+    outline: inherit;
+    box-shadow: inherit;
+}
+
+.navbar-default .site-nav.navbar-nav li a {
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4c5264;
+}
+.navbar-default .navbar-nav.site-navright li a {
+font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
+  color: #5887f9;
+}
+.creatprjct button {   
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    width: 160px;
+    border-radius: 3px;
+    background-color: #5887f9;
+    padding: 8px;
+    color: #fff;
+    display: block;
+    margin-top: 13px;
+  	float: right;
+    border: none
+}
+.user-img img {
+  margin-top: 7px;
+}
+a:focus, a:hover {
+    color: #23527c;
+    text-decoration: inherit;
+}
+
+.creatprjct a:hover{
+color:#fff;
+}
+
+.project-links 
+{
+  margin-top: 30px;
+ font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #5887f9;
+}
+.project-links .nav-tabs>li.active>a, 
+.project-links .nav-tabs>li.active>a:focus, 
+.project-links .nav-tabs>li.active>a:hover {
+        color: #5887f9;
+    cursor: default;
+    background-color: #fff;
+    border: inherit;
+    border-bottom-color: #5887f9;
+    outline: inherit;
+    border-bottom: 1px solid #5887f9;
+}
+.project-links .nav-tabs>li>a {
+    margin-right: 2px;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4c5264;
+}
+.project-links .nav-tabs>li>a:hover {
+    border-color: inherit;
+        border: 1px solid transparent;
+}
+.project-links .nav>li>a:focus, 
+.project-links .nav>li>a:hover {
+    text-decoration: none;
+    background-color: transparent;
+}
+.project-links .tab-content {
+    padding-top: 30px;
+}
+
+.proj-detail .title {
+  font-size: 18px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4c5264;
+     margin-top: 0;
+    margin-bottom: 0;
+}
+.allprojects-main {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.proj-detail .subtitle  {
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: left;
+  color: #8a9299;
+      margin-bottom: 0px;
+
+}
+.proj-tags-main {
+    margin-top: 5px;
+}
+.proj-tags-main .tag-text{
+
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: left;
+  color: #8a9299;
+  
+}
+.proj-img-main figure {
+        /* border: 1px solid #efe5e5; */
+    width: 80px;
+    height: 80px;
+    text-align: center;
+}
+.proj-img-main figure img {
+    max-width: 100%;
+}
+
+.Contributelink-main {
+    margin-top: 20px;
+}
+.Contributelink-main a
+{
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    color: #5887f9;
+    border-radius: 3px;
+    border: solid 1px #5887f9;
+    width: 100px;
+    padding: 5px;
+    display: block;
+}
+/*css for join us form */
+.join-us-main {
+  position: absolute;
+  top: 93%;
+  right: 5%;
+  width: 25%;
+  border: 1px solid lightgrey;
+  background: #fff;
+  border-radius: 2px;
+  padding: 20px;
+  box-shadow: 0px 0px 5px 1px lightgrey;
+  display: none;
+}
+.join-us-main  p {
+  color: #4c5264;
+  font-weight: 600;
+  font-size: 18px;
+}
+.join-us-main  button {
+  background: #5887f9;
+  color: #fff;
+  width: 100%;
+}
+.join-us-main  button:hover {
+  background: #000;
+  color: #fff;
+}
+.join-us-main form input {
+  margin-bottom: 20px;
+}
+/*css for details page */
+.detail-page .right-conent .grow-proj {
+  color: #4c5264;
+  font-size: 36px;
+}
+.detail-page .right-conent .grow-des {
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  /*text-align: left;*/
+  color: #8a9299;
+}
+.detail-page .right-conent .grow-image, .detail-page .right-conent .grow-funds {
+  margin-top: 20px;
+}
+/*.detail-page .right-conent .grow-image {
+  width: 250px;
+  height: 250px;
+  
+}*/
+.detail-page .right-conent .grow-image img {
+  border-radius: 3px;
+  border: solid 1px #e2e8ed;
+  min-height: 350px;
+  width: 300px;
+}
+.grow-funds .fund-new-button button {
+  margin-top: 10px;
+  background: #5887f9;
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  padding: 5px;
+  font-weight: 600; 
+}
+.grow-funds h5:nth-child(1) {
+  border-top: 1px solid lightgrey;
+  padding-top: 10px;
+}
+/*css for create project modal*/
+#createProjectModal .form-group .projectDes input {
+  padding-bottom: 50px;
+    padding-top: 15px;
+}
+#createProjectModal .form-group input {
+  font-size: 14px;
+}
+#createProjectModal .modal-dialog .modal-body span {
+  color: #8a9299;
+  font-size: 12px;
+  margin-top: 3px;
+}
+#createProjectModal .modal-dialog .modal-footer .btn-primary {
+  background: #5887f9;
+  width: 120px;
+}
+#createProjectModal .modal-dialog .modal-footer .btn-secondary {
+  background: #fff;
+  border: 1px solid #b8c3cc;
+  width: 80px;
+}
+/*css for modal raisefundforthisprojreq */
+#raisefundforthisprojreq .modal-header {
+
+}
+.header-action  {
+  color: #8a9299;
+  font-size: 18px;
+  position: relative;
+  top: 5px;
+} 
+.header-action strong {
+  color: #4c5264;
+  font-weight: 600;
+  font-size: 18px;
+}
+.created-by {
+  font-size: 14px;
+  color: #8a9299;
+  padding-left: 85px;
+  margin-top: 5px;
+}
+.created-by .username {
+  color: #5887f9;
+}
+.raisefundmainleft {
+  font-size: 14px;
+  color: #4c5264;
+  padding: 0px 28px 0px 28px;
+  margin-top: 20px;
+}
+.list-label {
+  position: relative;
+  top: 5px;
+}
+.order-list {
+  margin-top: 20px;
+}
+.order-list li {
+  margin-bottom: 15px;
+}
+.raisefundmainright {
+  margin-top: 20px;
+}
+.raisefundmainright h5 {
+  font-size: 20px;
+  color: #4c5264;
+  font-weight: 600;
+  margin-top: 0;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+
+} 
+.raisefundmainright h5 span {
+  font-size: 12px;
+  color: #8a9299;
+  font-weight: 100;
+}
+.raiseeva {
+  margin-top: 15px;
+}
+.raiseeva p {
+  font-size: 12px;
+  color: #4c5264;
+  font-weight: 600;
+  margin: 0
+}
+.raiseeva .evaluator-name {
+  color: #5887f9;
+}
+.raiseeva .eva-key {
+  color: #8a9299;
+  font-weight: 100;
+  padding-bottom: 15px;
+    border-bottom: 1px solid lightgrey;
+} 
+.raiseeva .assgned-name {
+  margin-top: 15px;
+}
+.uploadandsubmit {
+    margin-top: 25px;
+}
+.uploadandsubmit .active {
+  margin-bottom: 15px;
+  background: #5887f9;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 5px 0px 5px;
+}
+.uploadandsubmit .disabled {
+    background: #fff;
+    border: 1px solid lightgrey;
+    color: lightgrey;
+    margin-bottom: 15px;
+}
+.uploadandsubmit .disabled:focus {
+  cursor: unset;
+  border: none;
+}
+.in-progress {
+    background: no-repeat;
+    border: none;
+    box-shadow: none;
+    cursor: unset;
+}
+.in-progress span {
+  font-size: 14px;
+}
+.uploadandsubmit {
+  margin-top: 25px;
+}
+.uploadandsubmit p {
+  font-size: 12px;
+  color: #8a9299;
+  margin-top: 7px; 
+}
+.updateProfile .profile-menus {
+  margin-top: 15px;
+}
+.updateProfile .profile-menus span {
+  margin-left: 5px;
+  font-size: 14px;
+  color: #4c5264;
+}
+.updateProfile .profile-menus a {
+  font-size: 14px;
+  margin-left: 5px;
+}
+.fund-rating {
+  text-align: center;
+}
+.fund-rating span {
+  color: #4c5264;
+  font-size: 14px;
+}
+.rating-stars {
+  padding: 10px;
+}
+.rating-stars  span {
+  font-size: 24px;
+  padding: 0px 10px 0px 10px;
+  color: #5887f9;
+
+}
+button.validate  {
+       background: #5887f9;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 5px;
+    margin-top: 10px;
+}
+.fund-rating.reward {
+  margin-top: 20px; 
+}
+.eva-key span {
+  color: #5887f9;
+}
+.grow-funds h5 {
+      font-size: 20px;
+    color: #4c5264;
+    font-weight: 600;
+    margin-top: 0;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+.grow-funds h5 span {
+  font-size: 12px;
+    color: #8a9299;
+    font-weight: 100;
+}
+    
+/*.uploadandsubmit button {
+  width: 100%;
+  background: #5887f9;
+  border: none;
+}*/
+@media (min-width: 767px) {
+   .modal-dialog {
+    width: 720px;
+  }
+
+}
+
+
+
+
+
+
+
