@@ -42,11 +42,11 @@ class GetProjects(APIView):
                 {
                     'projectTitle' : i.project_title,
                     'domainId' : i.domainId,
-                    'projectBrief' : i.projectBrief,
+                    'projectBrief' : i.project_brief,
                     'creatorAddress' : i.creator_address,
                     'creatorName' : i.creator_name,
-                    'txnhash' : i.txnhash
+                    'txnhash' : i.txn_hash
                 }
             )
 
-        Response(data=project_details)
+        return Response(data=project_details)
