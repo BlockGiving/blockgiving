@@ -13,6 +13,13 @@ class IndexView(APIView):
         return render(request, 'html/index.html')
 
 
+class ProjectDetailsView(APIView):
+
+    def get(self, request):
+
+        return render(request, 'html/projectdetails.html')
+
+
 class CreateProjectView(APIView):
 
     def post(self, request):

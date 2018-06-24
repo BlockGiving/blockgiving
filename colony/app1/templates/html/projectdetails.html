@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Details</title>
+	<meta charset="utf-8">
+	<!-- Bootstrap css -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- custom css -->
+	<link href="css/style.css" rel="stylesheet">
+	<!-- fontawesom -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	
+</head>
+<body>
+	<header class="site-header">
+  		<nav class="navbar navbar-default">
+  			<div class="container-fluid">
+  				<!-- Brand and toggle get grouped for better mobile display -->
+  				<div class="row">
+  					<div class="col-sm-3 navbar-header">
+  						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+  							<span class="sr-only">Toggle navigation</span>
+  							<span class="icon-bar"></span>
+  							<span class="icon-bar"></span>
+  							<span class="icon-bar"></span>
+  						</button>
+  						<a class="navbar-brand" href="#">
+  							<img src="images/logo.png" alt="logo">
+  						</a>
+  					</div>
+
+  					<!-- Collect the nav links, forms, and other content for toggling -->
+  					<div class="col-sm-9 headr-nav">
+  						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  							<ul class="site-nav nav navbar-nav">
+  								<li><a href="member.html">Members </a></li>
+  								<li><a href="funds.html">Funds</a></li>
+  								
+  							</ul>
+  							
+  							<ul class="site-navright nav navbar-nav navbar-right">
+  								<li>
+  									<form class="serchbar navbar-form navbar-left">
+  										<div class="form-group">
+  											<input type="text" class="form-control" placeholder="Search">
+  										</div>
+  										<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+  									</form>
+  								</li>
+  								<li class="user-img"><img src="images/user.png" alt="user"></li>
+	  						</ul>
+						</div><!-- /.navbar-collapse -->
+					</div>
+				</div>
+			</div><!-- /.container-fluid -->
+		</nav>
+	</header>
+	<section class="site-content detail-page">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 leftside-content">
+					<div class="leftside-content-inner">
+						<h3 class="section-title">Connected to <br/>Ethereum Testnet</h3>
+						<p class="section-summry">A self-perpetuating,<br/> decentralized, cross-borders,<br/> Giving Platform</p>
+					</div>
+				</div>
+				<div class="col-sm-9 right-conent">
+					<div class="row">
+						<div class="col-sm-8">
+							<h3 class="grow-proj">Grow Project X</h3>
+							<span class="grow-des">Colony Features to Come and their possibilities. Crypto ecosystem adoption increase and its repercussions. New Actors addition and its possibilities. New Features addition and its possibilities. Identity with Civic and Reputation within Colony</span>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-sm-4 grow-image">
+							<img src="images/logo.png">
+						</div>
+						<div class="col-sm-4 grow-funds">
+							<h5>10 ETH<br>
+							<span>Available Funds </span>
+							<h5>5/10<br><span>Actions Taken</span></h5>
+							<div class="fund-new-button">
+								<button   type="button" class=" col-sm-12 btn btn-primary" data-toggle="modal" data-target="#fundnewaction">
+							 Funds New Action
+							</button>
+							</div>
+							
+							
+							<!-- Modal -->
+							<div class="modal fade" id="fundnewaction" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							  <div class="modal-dialog" role="document">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <div class="row">
+										<div class="col-xs-11">
+											<h5 class="modal-title" id="exampleModalLabel">Fund a new action</h5>
+										</div>
+										<div class="col-xs-1">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										
+									</div> 
+							      </div>
+							      <div class="modal-body">
+							        <div class="fundthisaction">
+							        	<span>Contribute directly to an action that you are passionate about and provide funds to people in the ground working for your cause.</span>
+							        	<form class="form-horizontal">
+											<div class="form-group">
+												<div class="col-xs-4"><label for="projectName" class="control-label">Selected Project X</label></div>
+												<div class="col-xs-4">
+													<div class="dropdown">
+													  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+													    Dropdown
+													    <span class="caret"></span>
+													  </button>
+													  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+													    <li><a href="#">Action</a></li>
+													    <li><a href="#">Another action</a></li>
+													    <li><a href="#">Something else here</a></li>
+													    <li role="separator" class="divider"></li>
+													    <li><a href="#">Separated link</a></li>
+													  </ul>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-xs-4"><label for="actiontitle" class="control-label">Action Title</label></div>
+												<div class="col-xs-8 projectDes">
+													<input type="text" class="form-control" id="actiontitle" placeholder="What do you want to get done?">
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-xs-4"><label for="actiondescription" class="control-label">Action Description</label></div>
+												<div class="col-xs-8">
+													<input type="text" placeholder="Describe what needs to be done in few lines" class="form-control" id="actiondescription">
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-xs-4"><label for="fundingammount" class="control-label">Funding Amount</label></div>
+												<div class="col-xs-8">
+													<input type="text" class="form-control" id="fundingammount" placeholder="Type or paste ETH address">
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-xs-4"><label for="actiondeadline" class="control-label">Action Deadline</label></div>
+												<div class="col-xs-8">
+													<div class='input-group date' id='datetimepicker1'>
+									                    <input type='text' class="form-control" />
+									                    <span class="input-group-addon">
+									                        <span class="glyphicon glyphicon-calendar"></span>
+									                    </span>
+									                </div>
+													
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-xs-4"><label for="actionava" class="control-label">Action Evaluators</label></div>
+												<div class="col-xs-8">
+													<input type="text" class="form-control" id="actionava" placeholder="Type or paste ETH address">
+													<span>*ETH addrss of the person who should evalute the action after its done</span>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-xs-4"><label for="actioncreator" class="control-label">Action Creator</label></div>
+												<div class="col-xs-8">
+													<input type="text" class="form-control" id="actioncreator" placeholder="Enter your name">
+													<span>ETH address  <span class="main-addtress">0x93E682107d1E9defB0b5ee701C71707a4B2E46Bc</span></span>
+												</div>
+
+											</div>
+										</form>
+							        </div>
+							      </div>
+							      <div class="modal-footer">
+							      	<button type="button" class="btn btn-primary">Fund this action</button>
+							        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+							        
+							      </div>
+							    </div>
+							  </div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-7 project-links">
+							<div class="tabbable">
+								<ul class="nav nav-tabs">
+									<li class="active"><a href="#actionRequired" data-toggle="tab" aria-expanded="false">Action Required</a></li>
+									<li class=""><a href="#zerohunger" data-toggle="tab" aria-expanded="false">Action in Progress</a></li>
+									<li class=""><a href="#education" data-toggle="tab" aria-expanded="true">Action Taken</a></li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane active" id="actionRequired">
+										<ul class="list-group">
+										  <li class="list-group-item"><a >Invte others to join the network</a></li>
+										  <li class="list-group-item"><a data-toggle="modal" data-target="#raisefundforthisprojreq">Raise Funds for the project</a></li>
+										  	<!-- modal -->
+										  <div class="modal fade" id="raisefundforthisprojreq" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+											  <div class="modal-dialog modal-dialog-centered" role="document">
+											    <div class="modal-content">
+											      <div class="modal-header">
+											        <div class="row">
+													<div class="col-xs-10">
+														<h5 class="modal-title" id="exampleModalLabel">Project X </h5>
+														<span class="header-action">Action #2 <strong>Raise funds for this project</strong></span>
+														<p class="created-by">Created by <span class="username">Lester Nygaard </span><span class="usrid">0x93E682107d1E9defB0b5ee...</span><i class="fa fa-copy"></i></p>
+													</div>
+													<div class="col-xs-2">
+														<button class="in-progress" type="button">
+															<span aria-hidden="true">In Progress</span>
+															</button>
+													</div>
+												</div>  
+											      </div>
+											      <div class="modal-body">
+											        <div class="row">
+														<div class="col-sm-7 raisefundmainleft">
+															<span>Invite nyone to fund any pot on ProjectX or global pool.</span><br>
+															<span class="list-label">To claim rewards:</span>
+															<ol class="order-list">
+															  <li>Click on ‘Execute Task’</li>
+															  <li>Complete your task before deadline.</li>
+															  <li>Upload the proofs of executed task in the form of video, audio, social media posts if any.</li>
+															  <li>Evaluators wouldvalidate your task nd you will utomatically receive payout.</li>
+															</ol>
+														</div>
+														<div class="col-sm-5 raisefundmainright">
+															<h5>30 October, 2018</5><br>
+															<span>Deadline</span>
+															<h5>2 ETH<br><span>Funds</span></h5>
+															
+															<div class="raiseeva">
+																<p>Evaluator</p>
+																<p class="evaluator-name">Ron Swanson</p>
+																<p class="eva-key">0x93E682107d1E9defB0b5e...<i class="fal fa-copy"></i></p>
+															</div>
+															<div class="uploadandsubmit">
+																<div class="row">
+																<button class="col-sm-10 col-sm-offset-1 active">Take Action </button>
+																<button class="col-sm-10 col-sm-offset-1 disabled">Validate Action</button>
+																<button class="col-sm-10 col-sm-offset-1 disabled">Claim Funds </button>
+																</div>
+																
+															</div>
+														</div>
+													</div>
+											      </div>
+											     <!--  <div class="modal-footer">
+											       <button type="button" class="btn btn-primary">Save changes</button>
+											        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											      </div>
+											    </div> -->
+											  </div>
+											</div>
+										</ul>
+									</div>
+									<div class="tab-pane" id="zerohunger">
+										<ul class="list-group">
+										  <li class="list-group-item"><a href="" data-toggle="modal" data-target="#raisefundforthisproj">Proof Submission</a></li>
+										  <li class="list-group-item"><a a href="" data-toggle="modal" data-target="#raisefundforthisprojacthird">In Progress</a></li>
+										  <li class="list-group-item"><a a href="" data-toggle="modal" data-target="#raisefundforthisprojactvalid">Validation</a></li>
+										  <li class="list-group-item"><a a href="" data-toggle="modal" data-target="#raisefundclaimrewards">submission</a></li>
+										  <li class="list-group-item"><a a href="" data-toggle="modal" data-target="#raisefundcompleted">Completed</a></li>
+										  <!-- modal -->
+										  <div class="modal fade" id="raisefundforthisproj" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+											  <div class="modal-dialog modal-dialog-centered" role="document">
+											    <div class="modal-content">
+											      <div class="modal-header">
+											        <div class="row">
+													<div class="col-xs-10">
+														<h5 class="modal-title" id="exampleModalLabel">Project X </h5>
+														<span class="header-action">Action #2 <strong>Raise funds for this project</strong></span>
+														<p class="created-by">Created by <span class="username">Lester Nygaard </span><span class="usrid">0x93E682107d1E9defB0b5e...</span><i class="fa fa-copy"></i></p>
+													</div>
+													<div class="col-xs-2">
+														<button class="in-progress" type="button">
+															<span aria-hidden="true">In Progress</span>
+															</button>
+													</div>
+												</div>  
+											      </div>
+											      <div class="modal-body">
+											        <div class="row">
+														<div class="col-sm-7 raisefundmainleft">
+															<span>Invite nyone to fund any pot on ProjectX or global pool.</span><br>
+															<span class="list-label">To claim rewards:</span>
+															<ol class="order-list">
+															  <li>Click on ‘Execute Task’</li>
+															  <li>Complete your task before deadline.</li>
+															  <li>Upload the proofs of executed task in the form of video, audio, social media posts if any.</li>
+															  <li>Evaluators wouldvalidate your task nd you will utomatically receive payout.</li>
+															</ol>
+														</div>
+														<div class="col-sm-5 raisefundmainright">
+															<h5>30 October, 2018</5><br>
+															<span>Deadline</span>
+															<h5>2 ETH<br><span>Funds</span></h5>
+															<div class="raiseeva">
+																<p>Evaluator</p>
+																<p class="evaluator-name">Ron Swanson</p>
+																<p class="eva-key">0x93E682107d1E9defB0b5e...<i class="fa fa-copy"></i></p>
+															</div>
+															<div class="uploadandsubmit">
+																<div>
+																	<input type="file" name="file"/>
+																	<p>* Please make sure to upload correct deliverables/proofs. You can’t change this after you click submit.</p>
+																	<button type="button" class="col-sm-10 col-sm-offset-1 btn btn-primary ">Save changes</button>
+																</div>
+																
+															</div>
+														</div>
+													</div>
+											      </div>
+											      <!-- <div class="modal-footer">
+											       <button type="button" class="btn btn-primary">Save changes</button>
+											        
+											      </div> -->
+											    </div>
+											  </div>
+											</div>
+											<!-- modal -->
+											<div class="modal fade" id="raisefundforthisprojacthird" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+											  <div class="modal-dialog modal-dialog-centered" role="document">
+											    <div class="modal-content">
+											      <div class="modal-header">
+											        <div class="row">
+													<div class="col-xs-10">
+														<h5 class="modal-title" id="exampleModalLabel">Project X </h5>
+														<span class="header-action">Action #2 <strong>Raise funds for this project</strong></span>
+														<p class="created-by">Created by <span class="username">Lester Nygaard </span><span class="usrid">0x93E682107d1E9defB0b...</span><i class="fa fa-copy"></i></p>
+													</div>
+													<div class="col-xs-2">
+														<button class="in-progress" type="button">
+															<span aria-hidden="true">In Progress</span>
+															</button>
+													</div>
+												</div>  
+											      </div>
+											      <div class="modal-body">
+											        <div class="row">
+														<div class="col-sm-7 raisefundmainleft">
+															<span>Invite nyone to fund any pot on ProjectX or global pool.</span><br>
+															<span class="list-label">To claim rewards:</span>
+															<ol class="order-list">
+															  <li>Click on ‘Execute Task’</li>
+															  <li>Complete your task before deadline.</li>
+															  <li>Upload the proofs of executed task in the form of video, audio, social media posts if any.</li>
+															  <li>Evaluators wouldvalidate your task nd you will utomatically receive payout.</li>
+															</ol>
+														</div>
+														<div class="col-sm-5 raisefundmainright">
+															<h5>30 October, 2018</5><br>
+															<span>Deadline</span>
+															<h5>2 ETH<br><span>Funds</span></h5>
+															
+															<div class="raiseeva">
+																<p>Evaluator</p>
+																<p class="evaluator-name">Ron Swanson</p>
+																<p class="eva-key">0x93E682107d1E9defB0b5e...<i class="fa fa-copy"></i></p>
+																<p class="assgned-name">Assgned Do-gooder</p>
+																<p class="evaluator-name">Andy Dwyer</p>
+																<p class="eva-key">0x93E682107d1E9defB0b5e...<i class="fa fa-copy"></i></p>
+															</div>
+															<div class="uploadandsubmit">
+																<div class="row">
+																<button class="col-sm-10 col-sm-offset-1 disabled">Take Action </button>
+																<button class="col-sm-10 col-sm-offset-1 disabled">Validate Action</button>
+																<button class="col-sm-10 col-sm-offset-1 disabled">Claim Funds </button>
+																</div>
+																
+															</div>
+														</div>
+													</div>
+											      </div>
+											      <!-- <div class="modal-footer">
+											       <button type="button" class="btn btn-primary">Save changes</button>
+											        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											      </div> -->
+											    </div>
+											  </div>
+											</div>
+											<!-- modal validation -->
+											<div class="modal fade" id="raisefundforthisprojactvalid" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+											  <div class="modal-dialog modal-dialog-centered" role="document">
+											    <div class="modal-content">
+											      <div class="modal-header">
+											        <div class="row">
+													<div class="col-xs-10">
+														<h5 class="modal-title" id="exampleModalLabel">Project X </h5>
+														<span class="header-action">Action #2 <strong>Raise funds for this project</strong></span>
+														<p class="created-by">Created by <span class="username">Lester Nygaard </span><span class="usrid">0x93E682107d1E9defB0b...</span><i class="fa fa-copy"></i></p>
+													</div>
+													<div class="col-xs-2">
+														<button class="in-progress" type="button">
+															<span aria-hidden="true">In Progress</span>
+															</button>
+													</div>	
+												</div>  
+											      </div>
+											      <div class="modal-body">
+											        <div class="row">
+														<div class="col-sm-7 raisefundmainleft">
+															<span>Invite nyone to fund any pot on ProjectX or global pool.</span><br>
+															<span class="list-label">To claim rewards:</span>
+															<ol class="order-list">
+															  <li>Click on ‘Execute Task’</li>
+															  <li>Complete your task before deadline.</li>
+															  <li>Upload the proofs of executed task in the form of video, audio, social media posts if any.</li>
+															  <li>Evaluators wouldvalidate your task nd you will utomatically receive payout.</li>
+															</ol>
+														</div>
+														<div class="col-sm-5 raisefundmainright">
+															<h5>30 October, 2018</5><br>
+															<span>Deadline</span>
+															<h5>2 ETH<br><span>Funds</span></h5>
+															<div class="raiseeva">
+																<p>Evaluator</p>
+																<p class="evaluator-name">Ron Swanson</p>
+																<p class="eva-key">0x93E682107d1E9defB0b5e...<i class="fa fa-copy"></i></p>
+																<p class="assgned-name">Assgned Do-gooder</p>
+																<p class="evaluator-name">Andy Dwyer</p>
+																<p class="eva-key">0x93E682107d1E9defB0b5e...<i class="fa fa-copy"></i></p>
+															</div>
+															<div class="updateProfile">
+																<p class="profile-menus"><i class="fa fa-check-circle"></i><span>Proof Uploaded</span><a href="">View Proofs</a></p>
+																<div class="row fund-rating ">
+																	<span>Rate</span>
+																	<div class="col-sm-12 rating-stars">
+																		<span class="fa fa-star checked"></span>
+																		<span class="fa fa-star checked"></span>
+																		<span class="fa fa-star checked"></span>
+																		<span class="fa fa-star"></span>
+																		<span class="fa fa-star"></span>
+																	</div>
+																	
+																	<button class="col-sm-10 col-sm-offset-1 validate">Validate</button>
+																
+																</div>
+																
+															</div>
+														</div>
+													</div>
+											      </div>
+											      <!-- <div class="modal-footer">
+											       <button type="button" class="btn btn-primary">Save changes</button>
+											        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											      </div> -->
+											    </div> 
+											  </div>
+											</div>
+											<!-- modal submission -->
+											<div class="modal fade" id="raisefundclaimrewards" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+											  <div class="modal-dialog modal-dialog-centered" role="document">
+											    <div class="modal-content">
+											      <div class="modal-header">
+											        <div class="row">
+													<div class="col-xs-10">
+														<h5 class="modal-title" id="exampleModalLabel">Project X </h5>
+														<span class="header-action">Action #2 <strong>Raise funds for this project</strong></span>
+														<p class="created-by">Created by <span class="username">Lester Nygaard </span><span class="usrid">0x93E682107d1E9defB0b...</span><i class="fa fa-copy"></i></p>
+													</div>
+													<div class="col-xs-2">
+														<button class="in-progress" type="button">
+															<span aria-hidden="true">In Progress</span>
+															</button>
+													</div>	
+												</div>  
+											      </div>
+											      <div class="modal-body">
+											        <div class="row">
+														<div class="col-sm-7 raisefundmainleft">
+															<span>Invite nyone to fund any pot on ProjectX or global pool.</span><br>
+															<span class="list-label">To claim rewards:</span>
+															<ol class="order-list">
+															  <li>Click on ‘Execute Task’</li>
+															  <li>Complete your task before deadline.</li>
+															  <li>Upload the proofs of executed task in the form of video, audio, social media posts if any.</li>
+															  <li>Evaluators wouldvalidate your task nd you will utomatically receive payout.</li></ol>
+														</div>
+														<div class="col-sm-5 raisefundmainright">
+															<h5>30 October, 2018</5><br>
+															<span>Deadline</span>
+															<h5>2 ETH<br><span>Funds</span></h5>
+															<div class="raiseeva">
+																<p>Evaluator</p>
+																<p class="evaluator-name">Ron Swanson</p>
+																<p class="eva-key">0x93E682107d1E9defB0b5e...<i class="fa fa-copy"></i></p>
+																<p class="assgned-name">Assgned Do-gooder</p>
+																<p class="evaluator-name">Andy Dwyer</p>
+																<p class="eva-key">0x93E682107d1E9defB0b5e...<i class="fa fa-copy"></i></p>
+															</div>
+															<div class="updateProfile">
+																<p class="profile-menus"><i class="fa fa-check-circle"></i><span>Proof Uploaded</span><a href="">View Proofs</a></p>
+																<p class="profile-menus"><i class="fa fa-check-circle"></i><span>Action Validated</span></p>
+																<div class="row fund-rating reward">
+																	<span>Rate Evalutor</span>
+																	<div class="col-sm-12 rating-stars">
+																		<span class="fa fa-star checked"></span>
+																		<span class="fa fa-star checked"></span>
+																		<span class="fa fa-star checked"></span>
+																		<span class="fa fa-star"></span>
+																		<span class="fa fa-star"></span>
+																	</div>
+																	
+																	<button class="col-sm-10 col-sm-offset-1 validate">Claim Rewards</button>
+																
+																</div>
+																
+															</div>
+														</div>
+													</div>
+											      </div>
+											      <!-- <div class="modal-footer">
+
+											       <button type="button" class="btn btn-primary">Claim Rewards</button>
+											        
+											      </div> -->
+											    </div>
+											  </div>
+											</div>
+											<!-- modal completed -->
+											<div class="modal fade" id="raisefundcompleted" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+											  <div class="modal-dialog modal-dialog-centered" role="document">
+											    <div class="modal-content">
+											      <div class="modal-header">
+											        <div class="row">
+													<div class="col-xs-10">
+														<h5 class="modal-title" id="exampleModalLabel">Project X </h5>
+														<span class="header-action">Action #2 <strong>Raise funds for this project</strong></span>
+														<p class="created-by">Created by <span class="username">Lester Nygaard </span><span class="usrid">0x93E682107d1E9defB0b...</span><i class="fa fa-copy"></i></p>
+													</div>
+													<div class="col-xs-2">
+														<button class="in-progress" type="button">
+															<span aria-hidden="true">Completed</span>
+															</button>
+													</div>	
+												</div>  
+											      </div>
+											      <div class="modal-body">
+											        <div class="row">
+														<div class="col-sm-7 raisefundmainleft">
+															<span>Invite nyone to fund any pot on ProjectX or global pool.</span><br>
+															<span class="list-label">To claim rewards:</span>
+															<ol class="order-list">
+															  <li>Click on ‘Execute Task’</li>
+															  <li>Complete your task before deadline.</li>
+															  <li>Upload the proofs of executed task in the form of video, audio, social media posts if any.</li>
+															  <li>Evaluators wouldvalidate your task nd you will utomatically receive payout.</li>
+															</ol>
+														</div>
+														<div class="col-sm-5 raisefundmainright">
+															<h5>30 October, 2018</5><br>
+															<span>Deadline</span>
+															<h5>2 ETH<br><span>Funds</span></h5>
+															<div class="raiseeva">
+																<p>Evaluator</p>
+																<p class="evaluator-name">Ron Swanson</p>
+																<p class="eva-key">0x93E682107d1E9defB0b5e...<i class="fa fa-copy"></i></p>
+																<p class="assgned-name">Assgned Do-gooder</p>
+																<p class="evaluator-name">Andy Dwyer</p>
+																<p class="eva-key">0x93E682107d1E9defB0b5e...<i class="fa fa-copy"></i>
+																<br>
+																		<span class="fa fa-star checked"></span>
+																		<span class="fa fa-star checked"></span>
+																		<span class="fa fa-star checked"></span>
+																		<span class="fa fa-star"></span>
+																		<span class="fa fa-star"></span>
+																	</p>
+															</div>
+															<div class="updateProfile">
+																<p class="profile-menus"><i class="fa fa-check-circle"></i><span>Proof Uploaded</span><a href="">View Proofs</a></p>
+																<p class="profile-menus"><i class="fa fa-check-circle"></i><span>Action Validated</span></p>
+																<p class="profile-menus"><i class="fa fa-check-circle"></i><span>Award Copmleted</span></p>
+																
+															</div>
+														</div>
+													</div>
+											      </div>
+											      <div class="modal-footer">
+
+											       <button type="button" class="btn btn-primary">Claim Rewards</button>
+											        
+											      </div>
+											    </div>
+											  </div>
+											</div>
+										</ul>
+									</div>
+									<!-- <div class="tab-pane" id="education">
+										<ul class="list-group">
+										  <li class="list-group-item">Invte others to join the network</li>
+										  <li class="list-group-item">Raise Funds for the project</li>
+										  
+										</ul>
+									</div> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- jquery -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<!-- bootstrap js -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!-- custom javascript -->
+	<script type="text/javascript" src="js/custom-jquey.js"></script>
+</body>
+</html>
