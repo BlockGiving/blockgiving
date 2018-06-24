@@ -21,7 +21,7 @@ from app1.views import IndexView, CreateProjectView, GetProjects, ProjectDetails
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', IndexView.as_view(), name='index_page'),
-    url(r'^project_details/$', ProjectDetailsView.as_view(), name='project_details_view'),
+    url(r'^project_details\/[0-9]{1,}$', ProjectDetailsView.as_view(), name='project_details_view'),
     url(r'^funds/$', ProjectFunds.as_view(), name='project_funds'),
     url(r'^api/v1/createProject/$', CreateProjectView.as_view(), name='create_project'),
     url(r'^api/v1/getProjects/$', GetProjects.as_view(), name='get_projects')

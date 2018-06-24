@@ -17,6 +17,8 @@ class ProjectDetailsView(APIView):
 
     def get(self, request):
 
+        print request.GET
+
         domainId = request.GET['domainId']
 
         project = CreateProject.objects.get(domainId=domainId)
