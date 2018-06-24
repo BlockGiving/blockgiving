@@ -21,4 +21,6 @@ from app1.views import IndexView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', IndexView.as_view(), name='index_page'),
+    url(r'^api/v1/createProject/$', CreateProject.as_view(), name='create_project'),
+
 ]

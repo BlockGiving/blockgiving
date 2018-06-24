@@ -12,6 +12,7 @@ class CreateProject(models.Model):
     project_brief = models.TextField(null=True, blank=True)
     creator_address = models.CharField(max_length=100, null=True, blank=True)
     creator_name = models.CharField(max_length=100, null=True, blank=True)
+    txn_hash = models.CharField(max_length=100, null=True, blank=True)
 
     def __unicode__(self):
 
