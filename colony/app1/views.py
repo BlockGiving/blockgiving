@@ -20,6 +20,7 @@ class CreateProjectView(APIView):
        new_project = CreateProject()
 
        new_project.project_title = request.POST['projectTitle']
+       new_project.domainId = request.POST['domainId']
        new_project.project_brief = request.POST['projectBrief']
        new_project.creator_address = request.POST['creatorAddress']
        new_project.creator_name = request.POST['creatorName']

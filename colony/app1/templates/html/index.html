@@ -429,6 +429,7 @@
 								$.post('api/v1/createProject/', {
 									projectTitle : $('#projectName').val(),
 									projectBrief: $('#projectDescription').val(),
+									domainId : parseInt(currentDomain) + 1,
 									creatorAddress : web3.eth.accounts[0],
 									creatorName : $('#yourName').val(),
 									txnhash : data.toString(),
