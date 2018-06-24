@@ -411,6 +411,8 @@
 
 			$('#startProject').on('click', function () {
 
+				console.log('startProject clicked')
+
 				colonyContract.at(colonyContractAddress).getDomainCount(function (err, data) {
 					if (err) { console.error(err) }
 					else {
