@@ -54,3 +54,6 @@ https://github.com/mdhalim/blockGiving/blob/master/BlockGivingDeck.pdf
  - python manage.py makemigrations
  - python manage.py migrate
  - python runserver 0.0.0.0:8080
+## Things to do
+- Auto assign task to anyone through permissioned smart contract (similar to how Create Project smart contract)
+- Task Validation/Submission front-end views left to be implemented due to deadline.
