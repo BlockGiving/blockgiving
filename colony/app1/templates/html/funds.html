@@ -1,0 +1,224 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Funds</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+          <div class="col-sm-3 navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+              aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <img src="{% static 'images/logo.png' %}" alt="logo">
+            </a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="col-sm-9 headr-nav">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="site-nav nav navbar-nav">
+                <li>
+                  <a href="../">Connected To Rinkby Test Net</a>
+                </li>
+                <li>
+                  <a href="member.html">Members </a>
+                </li>
+                <li>
+                  <a href="../">Funds</a>
+                </li>
+
+              </ul>
+
+              <ul class="site-navright nav navbar-nav navbar-right">
+
+                <li class="user-img">
+                  <a id="togglemembermenu" href="#" class="joiToggle">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </li>
+                <div class="member-profile togglebox" id="toggleboxmember">
+                  <p>Join us</p>
+                  <form>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="ETH address">
+                      <input type="text" class="form-control" placeholder="Name">
+                      <input type="text" class="form-control" placeholder="Email">
+                    </div>
+                    <button type="submit" class="btn btn-default">Join</button>
+                  </form>
+                </div>
+              </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+          </div>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <section class="funds-section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 ">
+          <h5 class="member-heading">A Decentralized, self perpetuating, cross border givin platform</h5>
+          <div class="row">
+            <div class="col-sm-12 funds-main-sec">
+              <div class="row">
+                <div class="col-sm-2">
+                  <h3>Colony Total Supply</h3>
+                </div>
+                <div class="col-sm-2">
+                  <h3 id="tokenTotalSupply"></h3>
+                </div>
+                <div class="col-sm-2 col-sm-offset-3 issue-token">
+                  <button id="issueTokens">Issue New Tokens</button>
+                </div>
+                <div class="col-sm-3 tocken-input">
+                  <input id="mintTokenInput" type="text" name="">
+                  <span class="fa fa-check-circle"></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="token-paid">
+                  <div class="col-sm-2 ">
+                    <h3>Tokens Paid Out</h3>
+                  </div>
+                  <div class="col-sm-2">
+                    <h3>0</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="funds-in-price">
+                  <div class="col-sm-2">
+                    <h3>Funds in price(ETH)</h3>
+                  </div>
+                  <div class="col-sm-2">
+                    <h3 id="fundsInETH">15,000</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-sm-12 fund-billing">
+              <h5>POTS</h5>
+              <table class="table ">
+                <thead>
+                  <tr>
+                    <th>SL</th>
+                    <th>Fund Name</th>
+                    <th>Funds Available</th>
+                    <th>Funds Paid Out</th>
+                  </tr>
+                </thead>
+                <tbody id="fundBody">
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+
+    $(document).ready(function () {
+
+      var colonyContract = web3.eth.contract([{ "constant": false, "inputs": [{ "name": "_parentSkillId", "type": "uint256" }], "name": "addDomain", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_parentSkillId", "type": "uint256" }], "name": "addGlobalSkill", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "assignWorkRating", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_users", "type": "address[]" }, { "name": "_amount", "type": "int256[]" }], "name": "bootstrapColony", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "cancelTask", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_token", "type": "address" }], "name": "claimColonyFunds", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint256" }, { "name": "_token", "type": "address" }], "name": "claimPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_payoutId", "type": "uint256" }, { "name": "_squareRoots", "type": "uint256[7]" }, { "name": "_userReputation", "type": "uint256" }, { "name": "_totalReputation", "type": "uint256" }], "name": "claimRewardPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_sigV", "type": "uint8[]" }, { "name": "_sigR", "type": "bytes32[]" }, { "name": "_sigS", "type": "bytes32[]" }, { "name": "_mode", "type": "uint8[]" }, { "name": "_value", "type": "uint256" }, { "name": "_data", "type": "bytes" }], "name": "executeTaskChange", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_payoutId", "type": "uint256" }], "name": "finalizeRewardPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "finalizeTask", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "getGlobalRewardPayoutCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_user", "type": "address" }], "name": "getUserRewardPayoutCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_network", "type": "address" }], "name": "initialiseColony", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_specificationHash", "type": "bytes32" }, { "name": "_domainId", "type": "uint256" }], "name": "makeTask", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_wad", "type": "uint256" }], "name": "mintTokens", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_wad", "type": "uint256" }], "name": "mintTokensForColonyNetwork", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_fromPot", "type": "uint256" }, { "name": "_toPot", "type": "uint256" }, { "name": "_amount", "type": "uint256" }, { "name": "_token", "type": "address" }], "name": "moveFundsBetweenPots", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint8" }, { "name": "_rating", "type": "uint8" }, { "name": "_salt", "type": "bytes32" }], "name": "revealTaskWorkRating", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_specificationHash", "type": "bytes32" }], "name": "setTaskBrief", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_domainId", "type": "uint256" }], "name": "setTaskDomain", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_dueDate", "type": "uint256" }], "name": "setTaskDueDate", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_token", "type": "address" }, { "name": "_amount", "type": "uint256" }], "name": "setTaskEvaluatorPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_token", "type": "address" }, { "name": "_amount", "type": "uint256" }], "name": "setTaskManagerPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint8" }, { "name": "_user", "type": "address" }], "name": "setTaskRoleUser", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_skillId", "type": "uint256" }], "name": "setTaskSkill", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_token", "type": "address" }, { "name": "_amount", "type": "uint256" }], "name": "setTaskWorkerPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_token", "type": "address" }], "name": "setToken", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_token", "type": "address" }], "name": "startNextRewardPayout", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_deliverableHash", "type": "bytes32" }], "name": "submitTaskDeliverable", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint8" }, { "name": "_ratingSecret", "type": "bytes32" }], "name": "submitTaskWorkRating", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }], "name": "TaskAdded", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "specificationHash", "type": "bytes32" }], "name": "TaskBriefChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "dueDate", "type": "uint256" }], "name": "TaskDueDateChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "domainId", "type": "uint256" }], "name": "TaskDomainChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "skillId", "type": "uint256" }], "name": "TaskSkillChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "role", "type": "uint8" }, { "indexed": false, "name": "user", "type": "address" }], "name": "TaskRoleUserChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "token", "type": "address" }, { "indexed": false, "name": "amount", "type": "uint256" }], "name": "TaskWorkerPayoutChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }], "name": "TaskFinalized", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }], "name": "TaskCanceled", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }], "name": "RewardPayoutCycleStarted", "type": "event" }, { "constant": false, "inputs": [{ "name": "_numPayouts", "type": "uint256" }], "name": "waiveRewardPayouts", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "authority", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_salt", "type": "bytes32" }, { "name": "_value", "type": "uint256" }], "name": "generateSecret", "outputs": [{ "name": "", "type": "bytes32" }], "payable": false, "stateMutability": "pure", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "getDomain", "outputs": [{ "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getDomainCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getFeeInverse", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "pure", "type": "function" }, { "constant": true, "inputs": [{ "name": "_token", "type": "address" }], "name": "getNonRewardPotsTotal", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_potId", "type": "uint256" }, { "name": "_token", "type": "address" }], "name": "getPotBalance", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getRewardInverse", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "pure", "type": "function" }, { "constant": true, "inputs": [{ "name": "_payoutId", "type": "uint256" }], "name": "getRewardPayoutInfo", "outputs": [{ "name": "", "type": "bytes32" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "address" }, { "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "getTask", "outputs": [{ "name": "", "type": "bytes32" }, { "name": "", "type": "bytes32" }, { "name": "", "type": "bool" }, { "name": "", "type": "bool" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256[]" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "getTaskChangeNonce", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getTaskCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint256" }, { "name": "_token", "type": "address" }], "name": "getTaskPayout", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint8" }], "name": "getTaskRole", "outputs": [{ "name": "", "type": "address" }, { "name": "", "type": "bool" }, { "name": "", "type": "uint8" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "getTaskWorkRatings", "outputs": [{ "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint8" }], "name": "getTaskWorkRatingSecret", "outputs": [{ "name": "", "type": "bytes32" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getToken", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "owner", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "key", "type": "bytes" }, { "name": "value", "type": "bytes" }, { "name": "branchMask", "type": "uint256" }, { "name": "siblings", "type": "bytes32[]" }], "name": "verifyReputationProof", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "version", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "pure", "type": "function" }]);
+      var domaincreatorContract = web3.eth.contract([{ "constant": false, "inputs": [{ "name": "_amount", "type": "uint256" }], "name": "claimEther", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "addDomain", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }]);
+      var domaincreatorContractAddress = '0x3B8393EA7edfdD784FCe14dBE6C41c33888E0981';
+
+      var colonyContractAddress = '0x3E22fe63a6a920DBd6D0E0C7Af2BAA24a6a58289';
+      var colonyTokenAddress = '0x23551eC4Baf11C152b32c4606D52EfbDA0c45c3d';
+
+      //imported to get owner of this colony
+      var dsauthContract = web3.eth.contract([{ "constant": false, "inputs": [{ "name": "owner_", "type": "address" }], "name": "setOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "authority_", "type": "address" }], "name": "setAuthority", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "owner", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "authority", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "authority", "type": "address" }], "name": "LogSetAuthority", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "owner", "type": "address" }], "name": "LogSetOwner", "type": "event" }]);
+
+
+      colonyContract.at(colonyContractAddress).getPotBalance("1", colonyTokenAddress, function(err, data){
+        if(err){console.error(err)}
+        else{
+          var totalSupply = data.toString();
+          $('#tokenTotalSupply').text(totalSupply);
+          $('#fundsInETH').text(web3.fromWei(parseInt(totalSupply) / 1000));
+        }
+      })
+
+      $('#issueTokens').on('click', function(){
+
+        //owner and admin only function
+        colonyContract.at(colonyContractAddress).mintTokens(web3.toWei($('#mintTokenInput').val()), function(err, data){
+          if(err){console.error(err)}
+          else{
+            alert('new tokens minted!')
+            location.reload();
+          }
+        })
+
+      })
+
+
+      $.get('api/v1/getProjects/', function (data) {
+        console.log(data);
+
+        data.forEach(function (domainData) {
+
+          colonyContract.at(colonyContractAddress).getPotBalance(domainData.domainId, colonyTokenAddress, function (err, data) {
+            if (err) { console.error(err) }
+            else {
+
+                $('#fundBody').append(
+
+                  '<tr>' +
+                    '<td>' +
+                      '#' +
+                    '</td>' +
+                    '<td>' +
+                      domainData.projectTitle +
+                    '</td>' +
+                    '<td>' +
+                      web3.fromWei(data.toString()) +
+                    '</td>' +
+                    '<td>' +
+                      '0' +
+                    '</td>'
+                );
+            }
+          })
+        })
+      })
+
+    });
+
+  </script>
+
+</body>
+
+</html>

@@ -20,6 +20,13 @@ class ProjectDetailsView(APIView):
         return render(request, 'html/projectdetails.html')
 
 
+class ProjectFunds(APIView):
+
+    def get(self, request):
+
+        return render(request, 'html/funds.html')
+
+
 class CreateProjectView(APIView):
 
     def post(self, request):
