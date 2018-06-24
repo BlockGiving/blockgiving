@@ -201,94 +201,13 @@
 									<div class="tab-content">
 										<div class="tab-pane active" id="allprojects">
 											<!-- starting of dom -->
-											<div class="allprojects-main">
-												<div class="row">
-													<div class="col-sm-2 proj-img-main">
-														<figure>
-															<img src="images/logo.png" alt="img" style="padding-top: 25px;">
-														</figure>
-													</div>
-													<div class="col-sm-8 proj-detail">
-														<h3 class="title">Grow ProjectX</h3>
-														<p class="subtitle">Contribute to grow the platform</p>
-														<h4 class="proj-tags-main">
-
-															<img src="images/task.png" alt="img">
-															<span class="tag-text">Actions Completed </span>
-
-															<img src="images/funds.png" alt="img">
-															<span class="tag-text">Actions Completed
-																<strong>10 ETH</strong>
-															</span>
-														</h4>
-													</div>
-													<div class="col-sm-2 Contributelink-main">
-														<a href="#"> Contribute</a>
-													</div>
-												</div>
-											</div>
+											
 											<!-- dom end -->
-											<div class="allprojects-main">
-												<div class="row">
-													<div class="col-sm-2 proj-img-main">
-														<figure>
-															<img src="images/logo.png" alt="img" style="padding-top: 25px;">
-														</figure>
-													</div>
-													<div class="col-sm-8 proj-detail">
-														<h3 class="title">Grow ProjectX</h3>
-														<p class="subtitle">Contribute to grow the platform</p>
-														<h4 class="proj-tags-main">
-
-															<img src="images/task.png" alt="img">
-															<span class="tag-text">Actions Completed </span>
-
-															<img src="images/funds.png" alt="img">
-															<span class="tag-text">Actions Completed
-																<strong>10 ETH</strong>
-															</span>
-														</h4>
-													</div>
-													<div class="col-sm-2 Contributelink-main">
-														<a href="#"> Contribute</a>
-													</div>
-												</div>
-											</div>
-											<div class="allprojects-main">
-												<div class="row">
-													<div class="col-sm-2 proj-img-main">
-														<figure>
-															<img src="images/logo.png" alt="img" style="padding-top: 25px;">
-														</figure>
-													</div>
-													<div class="col-sm-8 proj-detail">
-														<h3 class="title">Grow ProjectX</h3>
-														<p class="subtitle">Contribute to grow the platform</p>
-														<h4 class="proj-tags-main">
-
-															<img src="images/task.png" alt="img">
-															<span class="tag-text">Actions Completed </span>
-
-															<img src="images/funds.png" alt="img">
-															<span class="tag-text">Actions Completed
-																<strong>10 ETH</strong>
-															</span>
-
-														</h4>
-													</div>
-													<div class="col-sm-2 Contributelink-main">
-														<a href="#"> Contribute</a>
-													</div>
-												</div>
-											</div>
 										</div>
-										<div class="tab-pane" id="zerohunger">Secondo sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. Aliquam in felis sit amet
-											augue.
+										<div class="tab-pane" id="zerohunger">Comming Soon. This would show all the projects related to Zero Hunger.
 										</div>
-										<div class="tab-pane " id="education">Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque
-											mauris augue, molestie tincidunt condimentum vitae.</div>
-										<div class="tab-pane " id="cleanwater">consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt
-											condimentum vitae.</div>
+										<div class="tab-pane " id="education">Coming Soon. This would show all the projects related to Global Education.</div>
+										<div class="tab-pane " id="cleanwater">Coming Soon. This would show all the projects related to Clean Water.</div>
 									</div>
 								</div>
 							</div>
@@ -404,34 +323,40 @@
 			$.get('api/v1/getProjects/', function(data){
 				console.log(data);
 
-				for(var i=0; i<data.length; i++){
+				data.forEach(function(domainData){
 
-					$('#allprojects').append(
+					colonyContract.at(colonyContractAddress).getPotBalance(domainData.domainId, colonyTokenAddress, function(err, data){
+						if(err){console.error(err)}
+						else{
 
-						'<div class="allprojects-main">' +
-												'<div class="row">' +
-													'<div class="col-sm-2 proj-img-main">' +
-														'<figure><img src="images/logo.png" alt="img" style="padding-top: 25px;"></figure>' +
-													'</div>' +
-													'<div class="col-sm-8 proj-detail">' +
-														'<h3 class="title">' + data[i].projectTitle + '</h3>' +
-														'<p class="subtitle">' + data[i].projectBrief +'</p>' +
-														'<h4 class="proj-tags-main">' +
-															'<img src="images/task.png" alt="img">' +
-															'<span class="tag-text">Actions Completed </span>' +
-															'<img src="images/funds.png" alt="img">' +
-															'<span class="tag-text">Actions Completed' +
-																'<strong>' + '0.1' + '</strong>' +//display same from smart contract pot balance
-															'</span>' +
-														'</h4>' +
-													'</div>' +
-													'<div class="col-sm-2 Contributelink-main">' +
-														'<a href="#"> Contribute</a>' +
-													'</div>' +
-												'</div>' +
-											'</div>'
-					)
-				}
+							$('#allprojects').append(
+								'<div class="allprojects-main">' +
+									'<div class="row">' +
+										'<div class="col-sm-2 proj-img-main">' +
+											'<figure><img src="images/logo.png" alt="img" style="padding-top: 25px;"></figure>' +
+										'</div>' +
+										'<div class="col-sm-8 proj-detail">' +
+											'<h3 class="title">' + domainData.projectTitle + '</h3>' +
+											'<p class="subtitle">' + domainData.projectBrief +'</p>' +
+											'<h4 class="proj-tags-main">' +
+									
+												'<span class="tag-text">Actions Completed </span>' +
+									
+												'<span class="tag-text">Actions Completed' +
+												'<strong>' + web3.fromWei(data.toString()) + '</strong>' +//display same from smart contract pot balance
+									'</span>' +
+								'</h4>' +
+							'</div>' +
+							'<div class="col-sm-2 Contributelink-main">' +
+								'<a href="#"> Contribute</a>' +
+							'</div>' +
+						'</div>' +
+					'</div>'
+)
+
+						}
+					})
+				})
 			})
 
 			$('#startProject').on('click', function () {
