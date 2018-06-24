@@ -16,11 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from app1.views import IndexView
+from app1.views import IndexView, CreateProjectView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', IndexView.as_view(), name='index_page'),
-    url(r'^api/v1/createProject/$', CreateProject.as_view(), name='create_project'),
+    url(r'^api/v1/createProject/$', CreateProjectViews.as_view(), name='create_project'),
 
 ]
