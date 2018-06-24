@@ -413,6 +413,13 @@
 				})
 			})
 
+
+			//index js functions below
+
+			$.get('api/v1/getProjects/', function(data){
+				console.log(data);
+			})
+
 			$('#startProject').on('click', function () {
 
 				console.log('startProject clicked')
@@ -434,11 +441,9 @@
 									creatorName : $('#yourName').val(),
 									txnhash : data.toString(),
 									csrfmiddlewaretoken : csrf_token
-								}, function(err, data){
-									if(err){console.error(err)}
-									else{
-										alert('new project created!');
-									}
+								}).then(function(){
+									alert('new project created!');
+									location.reload();
 								})
 							}
 						})

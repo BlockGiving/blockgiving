@@ -29,3 +29,24 @@ class CreateProjectView(APIView):
        new_project.save()
 
        return Response(data=200)
+
+class GetProjects(APIView):
+
+    def get(self, request):
+
+        project_details = []
+
+        for i in CreateProject.objects.all():
+
+            project_details.append(
+                {
+                    'projectTitle' : i.project_title,
+                    'domainId' : i.domainId,
+                    'projectBrief' : i.projectBrief,
+                    'creatorAddress' : i.creator_address,
+                    'creatorName' : i.creator_name,
+                    'txnhash' : i.txnhash
+                }
+            )
+
+        Response(data=project_details)
