@@ -410,13 +410,15 @@
 
 		$('#startProject').on('click', function(){
 
-			new_project.project_title = request.POST['projectTitle']
-       		new_project.project_brief = request.POST['projectBrief']
-       		new_project.creator_address = request.POST['creatorAddress']
-       		new_project.creator_name = request.POST['creatorName']
-       		new_project.txn_hash = request.POST['txnhash']
+			colonyContract.at(colonyContractAddress).getDomainCount(function(err, data){
+				if(err){console.error(err)}
+				else{
+					var currentDomain = data.toString();
+					console.log(currentDomain);
+				}
+			})
 
-			domaincreatorContract.at(domaincreatorContractAddress).addDomain({value: web3.toWei($('#projectFunds').val())}, function(err, data){
+			/*domaincreatorContract.at(domaincreatorContractAddress).addDomain({value: web3.toWei($('#projectFunds').val())}, function(err, data){
 				if(err){console.error(err)}
 				else{
 					$.post('api/v1/createProject/', {
@@ -432,7 +434,7 @@
 						}
 					})
 				}
-			})
+			})*/
 		})
 
 	</script>
