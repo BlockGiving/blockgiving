@@ -200,6 +200,7 @@
 									</ul>
 									<div class="tab-content">
 										<div class="tab-pane active" id="allprojects">
+											<!-- starting of dom -->
 											<div class="allprojects-main">
 												<div class="row">
 													<div class="col-sm-2 proj-img-main">
@@ -226,6 +227,7 @@
 													</div>
 												</div>
 											</div>
+											<!-- dom end -->
 											<div class="allprojects-main">
 												<div class="row">
 													<div class="col-sm-2 proj-img-main">
@@ -336,24 +338,6 @@
 
 			//hardcoding JSON here, both DomainId and DomainName.
 			//using remix to create domains and to transfer fund to all pots.
-			var domainAndNameMapping = [
-				{
-					'domainName': 'Grow Project X',
-					'domainId': '1'
-				},
-				{
-					'domainName': 'Zero Hunger',
-					'domainId': '2'
-				},
-				{
-					'domainName': 'Education',
-					'domainId': '3'
-				},
-				{
-					'domainName': 'Clean Water',
-					'domainId': '4'
-				}
-			];
 
 			//function to get tokenAddress
 			colonyContract.at(colonyContractAddress).getToken.call(function (err, data) {
@@ -418,6 +402,35 @@
 
 			$.get('api/v1/getProjects/', function(data){
 				console.log(data);
+
+				for(var i=0; i<data.length; i++){
+
+					$('#allprojects').append(
+
+						'<div class="allprojects-main">' +
+												'<div class="row">' +
+													'<div class="col-sm-2 proj-img-main">' +
+														'<figure><img src="images/logo.png" alt="img" style="padding-top: 25px;"></figure>' +
+													'</div>' +
+													'<div class="col-sm-8 proj-detail">' +
+														'<h3 class="title">' + data[i].projectTitle + '</h3>' +
+														'<p class="subtitle">' + data[i].projectBrief +'</p>' +
+														'<h4 class="proj-tags-main">' +
+															'<img src="images/task.png" alt="img">' +
+															'<span class="tag-text">Actions Completed </span>' +
+															'<img src="images/funds.png" alt="img">' +
+															'<span class="tag-text">Actions Completed' +
+																'<strong>' + '0.1' + '</strong>' +//display same from smart contract pot balance
+															'</span>' +
+														'</h4>' +
+													'</div>' +
+													'<div class="col-sm-2 Contributelink-main">' +
+														'<a href="#"> Contribute</a>' +
+													'</div>' +
+												'</div>' +
+											'</div>'
+					)
+				}
 			})
 
 			$('#startProject').on('click', function () {
