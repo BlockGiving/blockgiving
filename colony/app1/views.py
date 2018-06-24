@@ -15,11 +15,6 @@ class IndexView(APIView):
 
 class CreateProject(APIView):
 
-    domainId = models.CharField(max_length=5, null=True, blank=True)
-    project_brief = models.TextField(null=True, blank=True)
-    creator_address = models.CharField(max_length=100, null=True, blank=True)
-    creator_name = models.CharField(max_length=100, null=True, blank=True)
-
     def post(self, request):
 
        new_project = CreateProject()
