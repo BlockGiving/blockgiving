@@ -117,7 +117,7 @@
                     <h3>Funds in price(ETH)</h3>
                   </div>
                   <div class="col-sm-2">
-                    <h3 id="fundsInETH">15,000</h3>
+                    <h3 id="fundsInETH"></h3>
                   </div>
                 </div>
               </div>
@@ -166,8 +166,8 @@
         if(err){console.error(err)}
         else{
           var totalSupply = data.toString();
-          $('#tokenTotalSupply').text(totalSupply);
-          $('#fundsInETH').text(web3.fromWei(parseInt(totalSupply) / 1000));
+          $('#tokenTotalSupply').text(web3.fromWei(totalSupply));
+          $('#fundsInETH').text(parseFloat(web3.fromWei(totalSupply)) / parseFloat(1000));
         }
       })
 
