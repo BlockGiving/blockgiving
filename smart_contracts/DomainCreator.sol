@@ -44,9 +44,9 @@ contract DomainCreator {
     constructor() public {
         
         owner = msg.sender;
-        colony_address = 0x3E22fe63a6a920DBd6D0E0C7Af2BAA24a6a58289;
-        token_address = 0x23551eC4Baf11C152b32c4606D52EfbDA0c45c3d;
-        parentSkillId = 45;
+        colony_address = 0x71578b44800432b37AF178dF03E99C9138461152;
+        token_address = 0x0000000000000000000000000000000000000000;
+        parentSkillId = 60;
         MIN_WEI = 100000000000000000;
         
     }
@@ -61,20 +61,10 @@ contract DomainCreator {
         
         //iColony(colony_address).mintTokens(msg.value * 1000);
         
-        iColony(colony_address).moveFundsBetweenPots(1, iColony(colony_address).getDomainCount(), (msg.value * 1000), token_address);
+        iColony(colony_address).moveFundsBetweenPots(1, iColony(colony_address).getDomainCount(), msg.value, token_address);
         
-        owner.transfer(msg.value);
+        //owner.transfer(msg.value);
 
-    }
-    
-    function claimEther(uint256 _amount) public {
-        
-        require(EIP20Interface(token_address).balanceOf(msg.sender) >= (MIN_WEI * 1000));
-        
-        EIP20Interface(token_address).transferFrom(msg.sender, token_address, _amount);
-        
-        address(msg.sender).transfer((_amount / 1000));
-        
     }
     
 }
