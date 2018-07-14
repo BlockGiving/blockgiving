@@ -71,7 +71,7 @@
 						<div class="col-sm-4 grow-funds">
 							<h5 id="availableFunds"><br>
 							<span>Available Funds </span>
-							<h5>5/10<br><span>Actions Taken</span></h5>
+							<h5>0/10<br><span>Actions Taken</span></h5>
 							<div class="fund-new-button">
 								<button   type="button" class=" col-sm-12 btn btn-primary" data-toggle="modal" data-target="#fundnewaction">
 							 Funds New Action
@@ -115,7 +115,7 @@
 											<div class="form-group">
 												<div class="col-xs-4"><label for="fundingammount" class="control-label">Funding Amount</label></div>
 												<div class="col-xs-8">
-													<input type="text" class="form-control" id="fundingammount" placeholder="Type or paste ETH address">
+													<input type="text" class="form-control" id="fundingammount" placeholder="ETH">
 												</div>
 											</div>
 											<div class="form-group">
@@ -592,7 +592,7 @@
 	//showing avaliable funds for that domain
 	
 		//step 1 - catch all params of fund new action
-		$('#fundTask').click(function(err, data){
+		$('#fundTask').on('click', function(err, data){
 			if(err){console.error(err)}
 			else{
 				crowdfundContract.at(crowdfundContractAddress).fund(domainId, total_ether, function(err, data){
