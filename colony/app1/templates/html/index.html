@@ -247,8 +247,8 @@
 											'<h3 class="title">' + domainData.projectTitle + '</h3>' +
 											'<p class="subtitle">' + domainData.projectBrief +'</p>' +
 											'<h4 class="proj-tags-main">' +
-												'<span class="tag-text">Project Fund(BGT): ' +
-												'<strong>' + web3.fromWei(data.toString()) + '</strong>' +//display same from smart contract pot balance
+												'<span class="tag-text">Cause Fund(ETH): ' +
+												'<strong>' + web3.fromWei(data[0].toString()) + '/' + web3.fromWei(data[1].toString()) + '</strong>' +//display same from smart contract pot balance
 									'</span>' +
 								'</h4>' +
 							'</div>' +
