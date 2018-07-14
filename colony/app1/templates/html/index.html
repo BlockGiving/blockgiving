@@ -129,15 +129,15 @@
 											<form class="form-horizontal">
 												<div class="form-group">
 													<div class="col-xs-4">
-														<label for="projectName" class="control-label">Project Title</label>
+														<label for="projectName" class="control-label">Cause Title</label>
 													</div>
 													<div class="col-xs-8">
-														<input type="text" class="form-control" id="projectName" placeholder="Enter a name for the project">
+														<input type="text" class="form-control" id="projectName" placeholder="Enter a name for the Cause">
 													</div>
 												</div>
 												<div class="form-group">
 													<div class="col-xs-4">
-														<label for="projectDescription" class="control-label">Project Brief</label>
+														<label for="projectDescription" class="control-label">Cause Brief</label>
 													</div>
 													<div class="col-xs-8 projectDes">
 														<input type="text" class="form-control" id="projectDescription" placeholder="Describe what needs to be done in few lines">
@@ -145,7 +145,7 @@
 												</div>
 												<div class="form-group">
 													<div class="col-xs-4">
-														<label for="projectFunds" class="control-label">Project Funds(ETH)</label>
+														<label for="projectFunds" class="control-label">Cause Funds(ETH)</label>
 													</div>
 													<div class="col-xs-4">
 														<input type="text" class="form-control" id="projectFunds">
@@ -153,11 +153,11 @@
 												</div>
 												<div class="form-group">
 													<div class="col-xs-4">
-														<label for="projectEvalutors" class="control-label">Project Evalutors</label>
+														<label for="projectEvalutors" class="control-label">Cause Id</label>
 													</div>
 													<div class="col-xs-8">
-														<input type="text" class="form-control" id="projectEvalutors" placeholder="Type or paste ETH address">
-														<span>*ETH addrss of the person who should evalute the action after its done</span>
+														<input type="text" class="form-control" id="causeId" placeholder="Cause ID">
+														<span>Cause Id</span>
 													</div>
 												</div>
 												<div class="form-group">
@@ -165,9 +165,9 @@
 														<label for="yourName" class="control-label">Your name</label>
 													</div>
 													<div class="col-xs-8">
-														<input type="text" class="form-control" id="yourName" placeholder="Type or paste ETH address">
-														<span>ETH address
-															<span id="ethAddress" class="main-addtress"></span>
+														<input type="text" class="form-control" id="yourName" placeholder="Your Name">
+														<span>Name
+															<span id="name" class="main-addtress"></span>
 														</span>
 													</div>
 												</div>
@@ -231,77 +231,13 @@
 		$(document).ready(function () {
 			var csrf_token = '{{ csrf_token }}';
 			//contains logic for colony smart contracts
-			var colonyContract = web3.eth.contract([{ "constant": false, "inputs": [{ "name": "_parentSkillId", "type": "uint256" }], "name": "addDomain", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_parentSkillId", "type": "uint256" }], "name": "addGlobalSkill", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "assignWorkRating", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_users", "type": "address[]" }, { "name": "_amount", "type": "int256[]" }], "name": "bootstrapColony", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "cancelTask", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_token", "type": "address" }], "name": "claimColonyFunds", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint256" }, { "name": "_token", "type": "address" }], "name": "claimPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_payoutId", "type": "uint256" }, { "name": "_squareRoots", "type": "uint256[7]" }, { "name": "_userReputation", "type": "uint256" }, { "name": "_totalReputation", "type": "uint256" }], "name": "claimRewardPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_sigV", "type": "uint8[]" }, { "name": "_sigR", "type": "bytes32[]" }, { "name": "_sigS", "type": "bytes32[]" }, { "name": "_mode", "type": "uint8[]" }, { "name": "_value", "type": "uint256" }, { "name": "_data", "type": "bytes" }], "name": "executeTaskChange", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_payoutId", "type": "uint256" }], "name": "finalizeRewardPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "finalizeTask", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "getGlobalRewardPayoutCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_user", "type": "address" }], "name": "getUserRewardPayoutCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_network", "type": "address" }], "name": "initialiseColony", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_specificationHash", "type": "bytes32" }, { "name": "_domainId", "type": "uint256" }], "name": "makeTask", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_wad", "type": "uint256" }], "name": "mintTokens", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_wad", "type": "uint256" }], "name": "mintTokensForColonyNetwork", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_fromPot", "type": "uint256" }, { "name": "_toPot", "type": "uint256" }, { "name": "_amount", "type": "uint256" }, { "name": "_token", "type": "address" }], "name": "moveFundsBetweenPots", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint8" }, { "name": "_rating", "type": "uint8" }, { "name": "_salt", "type": "bytes32" }], "name": "revealTaskWorkRating", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_specificationHash", "type": "bytes32" }], "name": "setTaskBrief", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_domainId", "type": "uint256" }], "name": "setTaskDomain", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_dueDate", "type": "uint256" }], "name": "setTaskDueDate", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_token", "type": "address" }, { "name": "_amount", "type": "uint256" }], "name": "setTaskEvaluatorPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_token", "type": "address" }, { "name": "_amount", "type": "uint256" }], "name": "setTaskManagerPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint8" }, { "name": "_user", "type": "address" }], "name": "setTaskRoleUser", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_skillId", "type": "uint256" }], "name": "setTaskSkill", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_token", "type": "address" }, { "name": "_amount", "type": "uint256" }], "name": "setTaskWorkerPayout", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_token", "type": "address" }], "name": "setToken", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_token", "type": "address" }], "name": "startNextRewardPayout", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_deliverableHash", "type": "bytes32" }], "name": "submitTaskDeliverable", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint8" }, { "name": "_ratingSecret", "type": "bytes32" }], "name": "submitTaskWorkRating", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }], "name": "TaskAdded", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "specificationHash", "type": "bytes32" }], "name": "TaskBriefChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "dueDate", "type": "uint256" }], "name": "TaskDueDateChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "domainId", "type": "uint256" }], "name": "TaskDomainChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "skillId", "type": "uint256" }], "name": "TaskSkillChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "role", "type": "uint8" }, { "indexed": false, "name": "user", "type": "address" }], "name": "TaskRoleUserChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }, { "indexed": false, "name": "token", "type": "address" }, { "indexed": false, "name": "amount", "type": "uint256" }], "name": "TaskWorkerPayoutChanged", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }], "name": "TaskFinalized", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }], "name": "TaskCanceled", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "id", "type": "uint256" }], "name": "RewardPayoutCycleStarted", "type": "event" }, { "constant": false, "inputs": [{ "name": "_numPayouts", "type": "uint256" }], "name": "waiveRewardPayouts", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "authority", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_salt", "type": "bytes32" }, { "name": "_value", "type": "uint256" }], "name": "generateSecret", "outputs": [{ "name": "", "type": "bytes32" }], "payable": false, "stateMutability": "pure", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "getDomain", "outputs": [{ "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getDomainCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getFeeInverse", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "pure", "type": "function" }, { "constant": true, "inputs": [{ "name": "_token", "type": "address" }], "name": "getNonRewardPotsTotal", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_potId", "type": "uint256" }, { "name": "_token", "type": "address" }], "name": "getPotBalance", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getRewardInverse", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "pure", "type": "function" }, { "constant": true, "inputs": [{ "name": "_payoutId", "type": "uint256" }], "name": "getRewardPayoutInfo", "outputs": [{ "name": "", "type": "bytes32" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "address" }, { "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "getTask", "outputs": [{ "name": "", "type": "bytes32" }, { "name": "", "type": "bytes32" }, { "name": "", "type": "bool" }, { "name": "", "type": "bool" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256[]" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "getTaskChangeNonce", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getTaskCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint256" }, { "name": "_token", "type": "address" }], "name": "getTaskPayout", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint8" }], "name": "getTaskRole", "outputs": [{ "name": "", "type": "address" }, { "name": "", "type": "bool" }, { "name": "", "type": "uint8" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }], "name": "getTaskWorkRatings", "outputs": [{ "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_id", "type": "uint256" }, { "name": "_role", "type": "uint8" }], "name": "getTaskWorkRatingSecret", "outputs": [{ "name": "", "type": "bytes32" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getToken", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "owner", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "key", "type": "bytes" }, { "name": "value", "type": "bytes" }, { "name": "branchMask", "type": "uint256" }, { "name": "siblings", "type": "bytes32[]" }], "name": "verifyReputationProof", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "version", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "pure", "type": "function" }]);
-			var domaincreatorContract = web3.eth.contract([{ "constant": false, "inputs": [{ "name": "_amount", "type": "uint256" }], "name": "claimEther", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "addDomain", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }]);
-			var domaincreatorContractAddress = '0x3B8393EA7edfdD784FCe14dBE6C41c33888E0981';
-			var colonyContractAddress = '0x3E22fe63a6a920DBd6D0E0C7Af2BAA24a6a58289';
-			var colonyTokenAddress = '0x23551eC4Baf11C152b32c4606D52EfbDA0c45c3d';
-			//imported to get owner of this colony
-			var dsauthContract = web3.eth.contract([{ "constant": false, "inputs": [{ "name": "owner_", "type": "address" }], "name": "setOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "authority_", "type": "address" }], "name": "setAuthority", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "owner", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "authority", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "authority", "type": "address" }], "name": "LogSetAuthority", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "owner", "type": "address" }], "name": "LogSetOwner", "type": "event" }]);
-			//using ipfs api to send task in ipfs
-			/*
-			var ipfs = window.IpfsApi({
-				host: 'https://ipfs.infura.io/',
-				port: 5001
-			});
-			*/
+ 			var crowdfundContract = web3.eth.contract([{"constant":true,"inputs":[{"name":"_fundId","type":"uint256"}],"name":"getFundStatus","outputs":[{"name":"_total_ether","type":"uint256"},{"name":"_ether_raised","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_volunteer_address","type":"address"},{"name":"_fundId","type":"uint256"}],"name":"give_payout","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_fundId","type":"uint256"},{"name":"_total_ether","type":"uint256"}],"name":"fund","outputs":[{"name":"","type":"bool"}],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]);
+			var crowdfundContractAddress = '0xfa93528582c1b41f8870054718afed6fd11a3e3e';
 			$('#ethAddress').text(web3.eth.accounts[0]);
-			//hardcoding JSON here, both DomainId and DomainName.
-			//using remix to create domains and to transfer fund to all pots.
-			//function to get tokenAddress
-			colonyContract.at(colonyContractAddress).getToken.call(function (err, data) {
-				if (err) { console.error(err) }
-				else {
-					console.log(data);
-				}
-			})
-			//function to get owner address, if ownerAddress == metamask user then show option to create a new project
-			colonyContract.at(colonyContractAddress).owner.call(function (err, data) {
-				if (err) { console.error(error) }
-				else {
-					console.log('metamask owner address: ', web3.eth.accounts[0]);
-					colonyContract.at(colonyContractAddress).authority.call(function (err, data) {
-						if (err) {
-							console.error(err)
-						} else {
-							console.log('authority smart contract address: ', data);
-							//getting owner of authority smart contract address
-							dsauthContract.at(data).owner.call(function (err, data) {
-								if (err) { console.error(err) }
-								else {
-									console.log('owner address, check metamask address too, ', data)
-									//call if condition and DOM insert functions here
-									if (data == web3.eth.accounts[0]) {
-										console.log('owner address, append dom for owner to add domains');
-									}
-								}
-							})
-						}
-					})
-				}
-			})
-			//getting pot balance for every project
-			//pot balance is transferred using remix
-			//if needed, add domain creation and pot transfer option inside admin template
-			/*
-			domainAndNameMapping.forEach(function (domain) {
-				console.log(domain.domainId);
-				colonyContract.at(colonyContractAddress).getPotBalance(domain.domainId, colonyTokenAddress, function (err, data) {
-					if (err) { console.error(err) }
-					else {
-						console.log(domain.domainName, web3.fromWei(data).toString());
-						//appending data to main DOM
-						$('#domainAndFund').append(
-							'<p>' +
-							'Project Name: ' + domain.domainName + '<br />' +
-							'Available Fund: ' + web3.fromWei(data).toString() + '<br/>' +
-							'</p>'
-						)
-					}
-				})
-			})
-			*/
+			
+			
 			//index js functions below
+			
 			$.get('api/v1/getProjects/', function(data){
 				console.log(data);
 				data.forEach(function(domainData){
@@ -334,19 +270,15 @@
 				})
 			})
 			$('#startProject').on('click', function () {
-				console.log('startProject clicked')
-				colonyContract.at(colonyContractAddress).getDomainCount(function (err, data) {
-					if (err) { console.error(err) }
-					else {
-						var currentDomain = data.toString();
-						console.log(currentDomain);
-						domaincreatorContract.at(domaincreatorContractAddress).addDomain({value: web3.toWei($('#projectFunds').val())}, function(err, data){
-							if(err){console.error(err)}
-							else{
-								$.post('api/v1/createProject/', {
+
+				crowdfundContract.at(crowdfundContractAddress).fund($('#causeId').val(), $('#projectFunds').val(), function(err, data){
+					if(err){
+						console.error(err);
+					}else{
+						$.post('api/v1/createProject/', {
 									projectTitle : $('#projectName').val(),
 									projectBrief: $('#projectDescription').val(),
-									domainId : parseInt(currentDomain) + 1,
+									causeId : $('#causeId').val(),
 									creatorAddress : web3.eth.accounts[0],
 									creatorName : $('#yourName').val(),
 									txnhash : data.toString(),
@@ -354,8 +286,6 @@
 								}).then(function(){
 									alert('new project created!');
 									location.reload();
-								})
-							}
 						})
 					}
 				})
