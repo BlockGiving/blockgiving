@@ -239,13 +239,8 @@
 			var domaincreatorContract = web3.eth.contract([{"constant":false,"inputs":[],"name":"addDomain","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]);
 			var domaincreatorContractAddress = '0x33255a9CCdF0cF9B26eAD6Ff35660918559AdC64';
 
-<<<<<<< HEAD
-			var colonyContractAddress = '0x71578b44800432b37AF178dF03E99C9138461152';
-			var colonyTokenAddress = '0x0000000000000000000000000000000000000000';
-=======
 			var colonyContractAddress = '0x2B62fEa3EA96083b3a5f2638c849aB7C6478eaD7';
 			var colonyTokenAddress = '0xB0A8c3a152fAdFF8b581ACd1b4be7c442146D380';
->>>>>>> 3a2da06a7a0389e566434d4247543aea7e44027e
 
 			//imported to get owner of this colony
 			var dsauthContract = web3.eth.contract([{ "constant": false, "inputs": [{ "name": "owner_", "type": "address" }], "name": "setOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "authority_", "type": "address" }], "name": "setAuthority", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "owner", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "authority", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "authority", "type": "address" }], "name": "LogSetAuthority", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "owner", "type": "address" }], "name": "LogSetOwner", "type": "event" }]);
