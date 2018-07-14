@@ -270,7 +270,7 @@
 
 					console.log(parseInt(totalCause));
 
-					crowdfundContract.at(crowdfundContractAddress).fund(parseInt(totalCause) + 1, $('#projectFunds').val(), function(err, data){
+					crowdfundContract.at(crowdfundContractAddress).fund(parseInt(totalCause) + 1, web3.toWei($('#projectFunds').val()), function(err, data){
 					if(err){
 						console.error(err);
 					}else{
