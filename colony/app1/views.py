@@ -24,7 +24,7 @@ class ProjectDetailsView(APIView):
         project = CreateProject.objects.get(domainId=domainId)
 	print project
 
-        return render(request, 'html/projectdetails.html', {'domainName' : project.project_title, 'projectBrief' : project.project_brief})
+        return render(request, 'html/projectdetails.html', {'domainName' : project.project_title, 'projectBrief' : project.project_brief, 'domainId' : domainId})
 
 
 class ProjectFunds(APIView):

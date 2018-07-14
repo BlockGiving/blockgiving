@@ -80,7 +80,7 @@
 							<img src="{% static 'images/logo.png' %}">
 						</div>
 						<div class="col-sm-4 grow-funds">
-							<h5>10 ETH<br>
+							<h5 id="availableFunds"><br>
 							<span>Available Funds </span>
 							<h5>5/10<br><span>Actions Taken</span></h5>
 							<div class="fund-new-button">
@@ -614,5 +614,35 @@
 	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 	<!-- custom javascript -->
 	<script type="text/javascript" src="{% static 'js/custom-jquey.js' %}"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			var csrf_token = '{{ csrf_token }}';
+			var domainId = '{{domainId}}';
+			//contains logic for colony smart contracts
+ 			var crowdfundContract = web3.eth.contract([{"constant":true,"inputs":[{"name":"_fundId","type":"uint256"}],"name":"getFundStatus","outputs":[{"name":"_total_ether","type":"uint256"},{"name":"_ether_raised","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_volunteer_address","type":"address"},{"name":"_fundId","type":"uint256"}],"name":"give_payout","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_fundId","type":"uint256"},{"name":"_total_ether","type":"uint256"}],"name":"fund","outputs":[{"name":"","type":"bool"}],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]);
+			var crowdfundContractAddress = '0xfa93528582c1b41f8870054718afed6fd11a3e3e';
+			$('#ethAddress').text(web3.eth.accounts[0]);
+
+			crowdfundContract.at(crowdfundContractAddress).getFundStatus(domainId, function(err, data){
+				if(err){
+					console.error(err);
+				}else{
+					$('#availableFunds').text(web3.fromWei(data[1].toString()))
+				}
+			})
+
+
+		})
+
+	//showing avaliable funds for that domain
+	
+		//step 1 - catch all params of fund new action
+
+
+	
+	</script>
+
 </body>
 </html>
