@@ -28,7 +28,7 @@
   							<span class="icon-bar"></span>
   						</button>
   						<a class="navbar-brand" href="../">
-  							<img src="{% static 'images/logo.png' %}" alt="logo">
+  							<p style="font-size:1em; font-weight:500; color:blue; 'IM Fell Great Primer'">BlockGiving</p>
   						</a>
   					</div>
 
@@ -101,24 +101,6 @@
 							        	<span>Contribute directly to an action that you are passionate about and provide funds to people in the ground working for your cause.</span>
 							        	<form class="form-horizontal">
 											<div class="form-group">
-												<div class="col-xs-4"><label for="projectName" class="control-label">Selected Project X</label></div>
-												<div class="col-xs-4">
-													<div class="dropdown">
-													  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-													    Dropdown
-													    <span class="caret"></span>
-													  </button>
-													  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-													    <li><a href="#">Action</a></li>
-													    <li><a href="#">Another action</a></li>
-													    <li><a href="#">Something else here</a></li>
-													    <li role="separator" class="divider"></li>
-													    <li><a href="#">Separated link</a></li>
-													  </ul>
-													</div>
-												</div>
-											</div>
-											<div class="form-group">
 												<div class="col-xs-4"><label for="actiontitle" class="control-label">Action Title</label></div>
 												<div class="col-xs-8 projectDes">
 													<input type="text" class="form-control" id="actiontitle" placeholder="What do you want to get done?">
@@ -137,37 +119,16 @@
 												</div>
 											</div>
 											<div class="form-group">
-												<div class="col-xs-4"><label for="actiondeadline" class="control-label">Action Deadline</label></div>
-												<div class="col-xs-8">
-													<div class='input-group date' id='datetimepicker1'>
-									                    <input type='text' class="form-control" />
-									                    <span class="input-group-addon">
-									                        <span class="glyphicon glyphicon-calendar"></span>
-									                    </span>
-									                </div>
-													
-												</div>
-											</div>
-											<div class="form-group">
-												<div class="col-xs-4"><label for="actionava" class="control-label">Action Evaluators</label></div>
-												<div class="col-xs-8">
-													<input type="text" class="form-control" id="actionava" placeholder="Type or paste ETH address">
-													<span>*ETH addrss of the person who should evalute the action after its done</span>
-												</div>
-											</div>
-											<div class="form-group">
 												<div class="col-xs-4"><label for="actioncreator" class="control-label">Action Creator</label></div>
 												<div class="col-xs-8">
 													<input type="text" class="form-control" id="actioncreator" placeholder="Enter your name">
-													<span>ETH address  <span class="main-addtress">0x93E682107d1E9defB0b5ee701C71707a4B2E46Bc</span></span>
 												</div>
-
 											</div>
 										</form>
 							        </div>
 							      </div>
 							      <div class="modal-footer">
-							      	<button type="button" class="btn btn-primary">Fund this action</button>
+							      	<button id="fundTask" type="button" class="btn btn-primary">Fund this action</button>
 							        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 							        
 							      </div>
@@ -609,6 +570,7 @@
 		$(document).ready(function(){
 			var csrf_token = '{{ csrf_token }}';
 			var domainId = '{{domainId}}';
+			var total_ether = 0;
 			//contains logic for colony smart contracts
  			var crowdfundContract = web3.eth.contract([{"constant":true,"inputs":[{"name":"_fundId","type":"uint256"}],"name":"getFundStatus","outputs":[{"name":"_total_ether","type":"uint256"},{"name":"_ether_raised","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_volunteer_address","type":"address"},{"name":"_fundId","type":"uint256"}],"name":"give_payout","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_fundId","type":"uint256"},{"name":"_total_ether","type":"uint256"}],"name":"fund","outputs":[{"name":"","type":"bool"}],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]);
 			var crowdfundContractAddress = '0xfa93528582c1b41f8870054718afed6fd11a3e3e';
@@ -618,6 +580,7 @@
 				if(err){
 					console.error(err);
 				}else{
+					total_ether = data[0].toString();
 					console.log(data[1])
 					$('#availableFunds').text(web3.fromWei(data[1].toString()))
 				}
@@ -629,7 +592,24 @@
 	//showing avaliable funds for that domain
 	
 		//step 1 - catch all params of fund new action
-
+		$('#fundTask').click(function(err, data){
+			if(err){console.error(err)}
+			else{
+				crowdfundContract.at(crowdfundContractAddress).fund(domainId, total_ether, function(err, data){
+					if(err){console.error(err)}
+					else{
+						/*
+						task_title = models.CharField(max_length=100, null=True, blank=True)
+    				task_domain = models.CharField(max_length=10, null=True, blank=True)
+    				taskHash = models.CharField(max_length=100, null=True, blank=True)
+    				task_description = models.CharField(max_length=100, null=True, blank=True)
+    				task_creator = models.CharField(max_length=100, null=True, blank=True)
+						*/
+						//$.post('')
+					}
+				})
+			}
+		})
 
 	
 	</script>
