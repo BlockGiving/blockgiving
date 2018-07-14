@@ -152,9 +152,6 @@
 													</div>
 												</div>
 												<div class="form-group">
-													<div class="col-xs-4">
-														<label for="projectEvalutors" class="control-label">Cause Id</label>
-													</div>	
 												</div>
 												<div class="form-group">
 													<div class="col-xs-4">
@@ -162,7 +159,7 @@
 													</div>
 													<div class="col-xs-8">
 														<input type="text" class="form-control" id="yourName" placeholder="Your Name">
-														<span>Name
+														<span>
 															<span id="name" class="main-addtress"></span>
 														</span>
 													</div>
@@ -270,6 +267,8 @@
 				$.get('api/v1/getProjects/', function(data){
 
 					var totalCause = data.length;
+
+					console.log(parseInt(totalCause));
 
 					crowdfundContract.at(crowdfundContractAddress).fund(parseInt(totalCause) + 1, $('#projectFunds').val(), function(err, data){
 					if(err){
