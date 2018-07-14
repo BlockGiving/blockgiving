@@ -154,11 +154,7 @@
 												<div class="form-group">
 													<div class="col-xs-4">
 														<label for="projectEvalutors" class="control-label">Cause Id</label>
-													</div>
-													<div class="col-xs-8">
-														<input type="text" class="form-control" id="causeId" placeholder="Cause ID">
-														<span>Cause Id</span>
-													</div>
+													</div>	
 												</div>
 												<div class="form-group">
 													<div class="col-xs-4">
@@ -241,7 +237,7 @@
 			$.get('api/v1/getProjects/', function(data){
 				console.log(data);
 				data.forEach(function(domainData){
-					colonyContract.at(colonyContractAddress).getPotBalance(domainData.domainId, colonyTokenAddress, function(err, data){
+					crowdfundContract.at(crowdfundContractAddress).getFundStatus(domainData.domainId, function(err, data){
 						if(err){console.error(err)}
 						else{
 							$('#allprojects').append(
@@ -271,14 +267,18 @@
 			})
 			$('#startProject').on('click', function () {
 
-				crowdfundContract.at(crowdfundContractAddress).fund($('#causeId').val(), $('#projectFunds').val(), function(err, data){
+				$.get('api/v1/getProjects/', function(data){
+
+					var totalCause = data.length;
+
+					crowdfundContract.at(crowdfundContractAddress).fund(parseInt(totalCause) + 1, $('#projectFunds').val(), function(err, data){
 					if(err){
 						console.error(err);
 					}else{
 						$.post('api/v1/createProject/', {
 									projectTitle : $('#projectName').val(),
 									projectBrief: $('#projectDescription').val(),
-									causeId : $('#causeId').val(),
+									domainId : $('#causeId').val(),
 									creatorAddress : web3.eth.accounts[0],
 									creatorName : $('#yourName').val(),
 									txnhash : data.toString(),
@@ -288,6 +288,8 @@
 									location.reload();
 						})
 					}
+				})
+
 				})
 			})
 		});
