@@ -35,9 +35,7 @@ class Task(models.Model):
     task_domain = models.CharField(max_length=10, null=True, blank=True)
     taskHash = models.CharField(max_length=100, null=True, blank=True)
     task_description = models.CharField(max_length=100, null=True, blank=True)
-    task_deadline = models.CharField(max_length=100, null=True, blank=True)
     task_creator = models.CharField(max_length=100, null=True, blank=True)
-    task_evaluator = models.CharField(max_length=100, null=True, blank=True)
 
     def __unicode__(self):
 
