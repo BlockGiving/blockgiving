@@ -270,14 +270,14 @@
 
 					console.log(parseInt(totalCause));
 
-					crowdfundContract.at(crowdfundContractAddress).fund(parseInt(totalCause) + 1, web3.toWei($('#projectFunds').val()), function(err, data){
+					crowdfundContract.at(crowdfundContractAddress).fund(parseInt(totalCause) + 100, web3.toWei($('#projectFunds').val()), function(err, data){
 					if(err){
 						console.error(err);
 					}else{
 						$.post('api/v1/createProject/', {
 									projectTitle : $('#projectName').val(),
 									projectBrief: $('#projectDescription').val(),
-									domainId : $('#causeId').val(),
+									domainId : parseInt(totalCause) + 1,
 									creatorAddress : web3.eth.accounts[0],
 									creatorName : $('#yourName').val(),
 									txnhash : data.toString(),
