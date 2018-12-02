@@ -43,10 +43,13 @@ The community as a whole evaluates the task completion submissions and approves 
 ## Our Hackathon Results
 ![alt text](https://raw.githubusercontent.com/blockgiving/blockGiving/master/colony/assets/rank.png)
 
-    * <a href="blockgiving/colony_judges_comments.md">Comments from Colony Judges</a>
-## Walkthrough
-https://github.com/mdhalim/blockGiving/blob/master/BlockGivingDeck.pdf
+   [Comments from Judges ](/colony_judges_comments.md) </br>
+   We ended up 4th with a prize of $1000, we just put in 10 hours of work into this project.
+   
+   - Lessons learned: Don't start too late! 
 
+## Walkthrough
+[Take a look at the whole deck and the walkthrough](/BlockGivingDeck.pdf)
 
 ## Setup
  - clone the repo
