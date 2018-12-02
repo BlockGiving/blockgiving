@@ -40,9 +40,10 @@ The community as a whole evaluates the task completion submissions and approves 
 * You should have MetaMask installed and connected to Rinkeby Test Network to view Project Funds and Create New Project.
 * While funding New Project, Enter Atleast 0.1 ETH to Create a New Project.
 
-##Our Hackathon Results
+## Our Hackathon Results
 ![alt text](https://raw.githubusercontent.com/blockgiving/blockGiving/master/colony/assets/rank.png)
-[Judges comments][colony_judges_comments.md]
+
+* [Judges comments][blockGiving/colony_judges_comments.md]
 
 ## Walkthrough
 https://github.com/mdhalim/blockGiving/blob/master/BlockGivingDeck.pdf
