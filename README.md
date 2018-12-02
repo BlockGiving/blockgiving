@@ -43,8 +43,7 @@ The community as a whole evaluates the task completion submissions and approves 
 ## Our Hackathon Results
 ![alt text](https://raw.githubusercontent.com/blockgiving/blockGiving/master/colony/assets/rank.png)
 
-* [Judges comments][blockGiving/colony_judges_comments.md]
-
+    * <a href="blockgiving/colony_judges_comments.md">Comments from Colony Judges</a>
 ## Walkthrough
 https://github.com/mdhalim/blockGiving/blob/master/BlockGivingDeck.pdf
 
