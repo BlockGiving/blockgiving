@@ -22,7 +22,7 @@ By the nature of design of the platform, there is a complete transparency in the
 People in the grassroots can directly take up tasks and get funded instantly for the service provided.
 The community as a whole evaluates the task completion submissions and approves or disapproves it.
 
-![alt text](https://raw.githubusercontent.com/mdhalim/blockGiving/master/deck-images/flow.png)
+![alt text](https://raw.githubusercontent.com/blockgiving/blockGiving/master/colony/assets/flow.png)
 
 ## Problems with Large NGOs
 * Donors don’t see the real impact of how their funds are getting used immediately. 
@@ -40,6 +40,9 @@ The community as a whole evaluates the task completion submissions and approves 
 * You should have MetaMask installed and connected to Rinkeby Test Network to view Project Funds and Create New Project.
 * While funding New Project, Enter Atleast 0.1 ETH to Create a New Project.
 
+##Our Hackathon Results
+![alt text](https://raw.githubusercontent.com/blockgiving/blockGiving/master/colony/assets/rank.png)
+[Judges comments][colony_judges_comments.md]
 
 ## Walkthrough
 https://github.com/mdhalim/blockGiving/blob/master/BlockGivingDeck.pdf
