@@ -3,7 +3,6 @@
 <!-- You *don't* need to delete all the comments like this one since they won't show up in the viewer. -->
 <!-- Use your project name as the title of this issue. This is what we’ll call your winning project! -->
 
-## You can access it live at http://139.59.191.168:8080/
 
 **A decentalized, self-perpuating, cross-border giving network on top of COLONY**
 <!--(Please also add it above ^^ as the title of this issue)-->
@@ -37,7 +36,7 @@ The community as a whole evaluates the task completion submissions and approves 
 * Allows the Creators of the Tasks/Evaluators to validate tasks
 * Do-ers claim funds after task validation and gets ETH directly into their wallet.
  
-## You can access it live at http://139.59.191.168:8080/
+## You can access it live at http://localhost:8080/
 * You should have MetaMask installed and connected to Rinkeby Test Network to view Project Funds and Create New Project.
 * While funding New Project, Enter Atleast 0.1 ETH to Create a New Project.
 
